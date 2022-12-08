@@ -9,11 +9,12 @@ import UIKit
 
 class CardsBoardView: UIView {
     
-    lazy var grid = Grid(layout: .aspectRatio(0.6777), frame: bounds)
     
-    var firstTimeDeal: Bool = true
+    private var firstTimeDeal: Bool = true
     
     private var previousCountOfViews = 12
+    
+    lazy var grid = Grid(layout: .aspectRatio(0.6777), frame: bounds)
     
     var numberOfCardsToBeDisplayed = 12 {
        didSet {

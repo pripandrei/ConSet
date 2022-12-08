@@ -76,9 +76,30 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
         splitViewController?.delegate = self
     }
     
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        return true
-    }
+//    override func viewDidLoad() {
+//            super.viewDidLoad()
+//        }
+//
+//        override func viewWillAppear(_ animated: Bool) {
+//            super.viewWillAppear(animated)
+//
+//        }
+//
+//        override open var shouldAutorotate: Bool {
+//            return false
+//        }
+    
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//       get {
+//          return .portrait
+//       }
+//    }
+    
+    /// splitViewController was removed
+    ///
+//    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+//        return true
+//    }
     
     @IBOutlet var themeButtons: [UIButton]! {
         didSet {
@@ -129,6 +150,8 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
             }
         }
     }
+    
+
 }
 
 extension UIImage {
@@ -138,23 +161,3 @@ extension UIImage {
         }
     }
 }
-
-
-//
-//@IBAction func toggleeTab(_ sender: UIButton) {
-//        guard var frame = tabBarController?.tabBar.frame else { return }
-//        let hidden = frame.origin.x == view.frame.size.width
-//        frame.origin.x = hidden ? view.frame.size.width - frame.size.width : view.frame.size.width
-//        UIView.animate(withDuration: 0.3) {
-//            self.tabBarController?.tabBar.frame = frame
-//    }
-//}
-//
-//func toggleTabbar() {
-//    guard var frame = tabBarController?.tabBar.frame else { return }
-//    let hidden = frame.origin.y == view.frame.size.height
-//    frame.origin.y = hidden ? view.frame.size.height - frame.size.height : view.frame.size.height
-//    UIView.animate(withDuration: 0.3) {
-//        self.tabBarController?.tabBar.frame = frame
-//    }
-//}

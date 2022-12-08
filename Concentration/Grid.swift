@@ -134,7 +134,6 @@ struct Grid
             updateCellFrames(to: cellSize)
             break
         }
-//        celPrint()
     }
     
     private mutating func updateCellFrames(to cellSize: CGSize) {

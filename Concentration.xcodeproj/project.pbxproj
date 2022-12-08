@@ -10,8 +10,6 @@
 		75145D5A27BC4FAA00157FB1 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75145D5927BC4FAA00157FB1 /* Timer.swift */; };
 		7515B1CB288F29F3006BEEBF /* ThemeChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7515B1CA288F29F3006BEEBF /* ThemeChooseViewController.swift */; };
 		7522EE8229219EC100F4708B /* startSetGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7522EE8129219EC100F4708B /* startSetGameViewController.swift */; };
-		75525AE42906BEA800EC519C /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75525AE22906BDE900EC519C /* SF-Pro.ttf */; };
-		75525AE62906BEFB00EC519C /* SF-Pro-Text-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75525AE52906BEFB00EC519C /* SF-Pro-Text-HeavyItalic.otf */; };
 		758B561328E62CB4003A735E /* CardsBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B560F28E62CB4003A735E /* CardsBoardView.swift */; };
 		758B561528E62CB4003A735E /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B561128E62CB4003A735E /* Grid.swift */; };
 		758B561628E62CB4003A735E /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B561228E62CB4003A735E /* CardsView.swift */; };
@@ -36,9 +34,6 @@
 		75145D5927BC4FAA00157FB1 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		7515B1CA288F29F3006BEEBF /* ThemeChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChooseViewController.swift; sourceTree = "<group>"; };
 		7522EE8129219EC100F4708B /* startSetGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startSetGameViewController.swift; sourceTree = "<group>"; };
-		75525AE02906BD9100EC519C /* SFPRODISPLAYULTRALIGHTITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFPRODISPLAYULTRALIGHTITALIC.OTF; path = "../../../../Downloads/sf-pro-display-cufonfonts/SFPRODISPLAYULTRALIGHTITALIC.OTF"; sourceTree = "<group>"; };
-		75525AE22906BDE900EC519C /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro.ttf"; path = "../../../../Downloads/San-Francisco-Pro-Fonts-master/SF-Pro.ttf"; sourceTree = "<group>"; };
-		75525AE52906BEFB00EC519C /* SF-Pro-Text-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-HeavyItalic.otf"; path = "../../../../Downloads/San-Francisco-Pro-Fonts-master/SF-Pro-Text-HeavyItalic.otf"; sourceTree = "<group>"; };
 		758B560F28E62CB4003A735E /* CardsBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsBoardView.swift; sourceTree = "<group>"; };
 		758B561128E62CB4003A735E /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		758B561228E62CB4003A735E /* CardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
@@ -109,9 +104,6 @@
 		75C589A427A3618300D3CA65 = {
 			isa = PBXGroup;
 			children = (
-				75525AE52906BEFB00EC519C /* SF-Pro-Text-HeavyItalic.otf */,
-				75525AE22906BDE900EC519C /* SF-Pro.ttf */,
-				75525AE02906BD9100EC519C /* SFPRODISPLAYULTRALIGHTITALIC.OTF */,
 				75C589AF27A3618300D3CA65 /* Concentration */,
 				75C589AE27A3618300D3CA65 /* Products */,
 			);
@@ -210,8 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75525AE62906BEFB00EC519C /* SF-Pro-Text-HeavyItalic.otf in Resources */,
-				75525AE42906BEA800EC519C /* SF-Pro.ttf in Resources */,
 				75C589BD27A3618500D3CA65 /* LaunchScreen.storyboard in Resources */,
 				75C589BA27A3618500D3CA65 /* Assets.xcassets in Resources */,
 				75C589B827A3618300D3CA65 /* Main.storyboard in Resources */,
@@ -397,9 +387,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -426,9 +416,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

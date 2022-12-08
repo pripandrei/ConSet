@@ -147,7 +147,8 @@ struct SetGame {
     
     private(set) var dateObserver = Date() {
         didSet {
-            interval = Date().timeIntervalSince(oldValue)
+            interval = dateObserver.timeIntervalSince(oldValue)
+//            interval = Date().timeIntervalSince(oldValue)
         }
     }
     

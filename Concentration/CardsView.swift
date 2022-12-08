@@ -196,7 +196,6 @@ extension CGRect {
         let zoomedWidth = size.width * zoomFactor
         let zoomedHeight = size.height * zoomFactor
         let originX = origin.x + (size.width - zoomedWidth) / 2
-//        print(originX)
         let originY = origin.y + (size.height - zoomedHeight) / 2
         return CGRect(origin: CGPoint(x: originX,y: originY) , size: CGSize(width: zoomedWidth, height: zoomedHeight))
     }

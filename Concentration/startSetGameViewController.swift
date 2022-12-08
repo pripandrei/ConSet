@@ -16,7 +16,16 @@ class startSetGameViewController: UIViewController {
             newGameButton.layer.cornerRadius = 10
         }
     }
+
+//
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        return .portrait
+//    }
     
+    
+
+    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         hidesBottomBarWhenPushed = false
