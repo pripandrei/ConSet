@@ -15,7 +15,7 @@ class TestIntegrationViewController: UIViewController {
     private var shouldDealThreeCards = false
     private var firstTimeDeal = true
     private var game = SetGame()
-    private var activated = false
+    private var firstTimeLayoutSubviews = true
     private var gameStart = true
     
     lazy var animator = UIDynamicAnimator(referenceView: view)
@@ -44,11 +44,18 @@ class TestIntegrationViewController: UIViewController {
             }
         }
     }
+    
+    var scoreCountDecorator: NSAttributedString {
+        get {
+            let label = NSAttributedString(string: "Score \(scoreCount)", attributes: attributedTextForScoreLable)
+            return label
+        }
+    }
         
     var scoreCount = Int() {
         didSet {
-            if let scoreLable = scoreLabel {
-                scoreLable.attributedText = NSAttributedString(string: "Score \(scoreCount)", attributes: attributedTextForScoreLable)
+            if let scoreLable = scoreLabelOrigin {
+                scoreLable.attributedText = scoreCountDecorator
             }
         }
     }
@@ -78,13 +85,14 @@ class TestIntegrationViewController: UIViewController {
     
     
     
-    @IBOutlet weak var discardPileUIImageView: UIImageView!  {
-        didSet {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(showSetByPressingScore))
-            discardPileUIImageView.isUserInteractionEnabled = true
-            discardPileUIImageView.addGestureRecognizer(tap)
-        }
-    }
+    @IBOutlet weak var discardPileUIImageView: UIImageView!
+//    {
+//        didSet {
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(showSetByPressingScore))
+//            discardPileUIImageView.isUserInteractionEnabled = true
+//            discardPileUIImageView.addGestureRecognizer(tap)
+//        }
+//    }
     
     
     @IBOutlet weak var scoreLabel: UITextField!
@@ -97,13 +105,14 @@ class TestIntegrationViewController: UIViewController {
 //        }
 //    }
     
-//    @IBOutlet weak var scoreLabel: UILabel! {
-//        didSet {
-//            let tap = UITapGestureRecognizer(target: self, action: #selector(showSetByPressingScore))
-//            scoreLabel.isUserInteractionEnabled = true
-//            scoreLabel.addGestureRecognizer(tap)
-//        }
-//    }
+    @IBOutlet weak var scoreLabelOrigin: UILabel! {
+        didSet {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(showSetByPressingScore))
+            scoreLabelOrigin.isUserInteractionEnabled = true
+            scoreLabelOrigin.addGestureRecognizer(tap)
+            scoreLabelOrigin.attributedText = scoreCountDecorator
+        }
+    }
 
 //    @IBOutlet weak var setButton: UIButton! {
 //        didSet {
@@ -139,6 +148,8 @@ class TestIntegrationViewController: UIViewController {
             game = SetGame()
             gameStart = true
             firstTimeDeal = true
+//            firstTimeLayoutSubviews = true
+            scoreCount = 0
             pushCardsOnRestart()
             _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false, block: { _ in
                 self.removeViewsFromSuperView()
@@ -345,14 +356,30 @@ class TestIntegrationViewController: UIViewController {
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        firstTimeLayoutSubviews = true
+    }
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if activated {
+        
+        if firstTimeLayoutSubviews {
             updateView()
-            activated = false
-        } else {
-            activated = true
+            firstTimeLayoutSubviews = false
         }
+
+//        firstTimeLayoutSubviews = false
+        
+        
+//        if firstTimeLayoutSubviews {
+//            updateView()
+//            firstTimeLayoutSubviews = false
+//        } else {
+//            updateView()
+////            firstTimeLayoutSubviews = true
+//        }
     }
     
     private func setFeatures(for view: CardsView, with card: CardSet) {
@@ -378,10 +405,6 @@ class TestIntegrationViewController: UIViewController {
         return imageView
     }
     
-    func startGame() {
-        updateView()
-    }
-    
     func updateView() {
         if let _ = dealThreeMoreCardButton, let _ = cardsBoardView {
             
@@ -394,9 +417,8 @@ class TestIntegrationViewController: UIViewController {
                 
                 let card = game.playingCards[index]
                 let viewOfCard = cardsViews[index]
-            
+                
                 if let rect = cardsBoardView.grid[index] {
-                    
                     let imageView = createBackCardImage()
                     if firstTimeDeal {
                         self.view.isUserInteractionEnabled = false
@@ -440,19 +462,25 @@ class TestIntegrationViewController: UIViewController {
                     else
                     {
                         UIViewPropertyAnimator.runningPropertyAnimator(
-                            withDuration: 0.5,
+                            withDuration: 0.2,
                             delay: 0.0,
                             animations: {
                                 if self.shouldDealThreeCards == false {
-                                    viewOfCard.frame = rect.insetBy(dx: 3.0, dy: 3.0)
                                     self.setFeatures(for: viewOfCard, with: card)
+                                    if viewOfCard.isSelected {
+                                        viewOfCard.frame = rect.insetBy(dx: 1.5, dy: 1.5)
+                                    } else {
+                                        viewOfCard.frame = rect.insetBy(dx: 4.0, dy: 4.0)
+                                    }
                                     imageView.removeFromSuperview()
                                 }
                                 else {
                                     if !(((self.game.cardsOnTable - 3)...self.game.cardsOnTable) ~= index)
                                     {
-                                        viewOfCard.frame = rect.insetBy(dx: 3.0, dy: 3.0)
-                                        imageView.removeFromSuperview()
+                                        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.5, delay: 0.0, animations: {
+                                            viewOfCard.frame = rect.insetBy(dx: 4.0, dy: 4.0)
+                                            imageView.removeFromSuperview()
+                                        })
                                     }
                                 }
                             }
@@ -462,12 +490,11 @@ class TestIntegrationViewController: UIViewController {
 //                            viewOfCard.frame = self.dealThreeMoreCardButton.frame.insetBy(dx: 6.0, dy: 6.0)
 //
 //                            viewOfCard.center = self.dealThreeMoreCardButton.convert(self.dealThreeMoreCardButton.center, to: viewOfCard).offsetBy(dx: 9.0, dy: 2.5)
-                            
                             UIViewPropertyAnimator.runningPropertyAnimator(
                                 withDuration: 0.5,
                                 delay: delay,
                                 animations: {
-                                    viewOfCard.frame = rect.insetBy(dx: 3.0, dy: 3.0)
+                                    viewOfCard.frame = rect.insetBy(dx: 4.0, dy: 4.0)
 
                                     imageView.frame = rect.insetBy(dx: -(rect.width / 4.5), dy: 4)
                                 },
@@ -508,11 +535,16 @@ class TestIntegrationViewController: UIViewController {
             }
             firstTimeDeal = false
             
-            if let _ = scoreLabel {
-                scoreCount = game.scoreCount
+            if let _ = scoreLabelOrigin {
+                if game.scoreCount > scoreCount {
+                    scoreCount = game.scoreCount
+                }
             }
         }
+        
     }
+    
+    var secondTimeEntered = false
     
     private func handlethreeCardsMatch() {
         self.view.isUserInteractionEnabled = false
@@ -530,9 +562,14 @@ class TestIntegrationViewController: UIViewController {
             cardBehavior.toggleItemBehaviours = false
             cardBehavior.collision.translatesReferenceBoundsIntoBoundary = true
             
-            if let indexOfreplacedCard = cardsViews.firstIndex(of: selectedSetCards[index] as! CardsView) {
-                indexOfSelectedCards.append(indexOfreplacedCard)
+            guard let indexOfreplacedCard2 = cardsViews.firstIndex(of: selectedSetCards[index] as! CardsView) else {
+                return
             }
+            indexOfSelectedCards.append(indexOfreplacedCard2)
+            
+//            if let indexOfreplacedCard = cardsViews.firstIndex(of: selectedSetCards[index] as! CardsView) {
+//                indexOfSelectedCards.append(indexOfreplacedCard)
+//            }
             
             let indexOfAddedView2 = cardsViews.endIndex - index - 1
             cardsViews.swapAt(indexOfAddedView2, indexOfSelectedCards[index])
@@ -545,7 +582,9 @@ class TestIntegrationViewController: UIViewController {
                 withDuration: 0.5,
                 delay: delayForReplacedCards,
                 animations: {
-                    replacedCardView2.frame = self.selectedSetCards[index].frame
+                    if let rec = self.cardsBoardView.grid[indexOfreplacedCard2] {
+                        replacedCardView2.frame = rec.insetBy(dx: 4.0, dy: 4.0)
+                    }
                     imageView.frame = self.selectedSetCards[index].frame.insetBy(dx: -17, dy: 0.0)
                     delayForReplacedCards += 0.4
                 }, completion: { _ in

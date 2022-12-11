@@ -35,7 +35,7 @@ class CardsView: UIView {
     {
         self.layer.masksToBounds = true
         if isSelected {
-            self.layer.borderWidth = 4.0
+            self.layer.borderWidth = 1.1
             self.layer.borderColor = #colorLiteral(red: 0.5303892493, green: 0.5488235354, blue: 0.7337629795, alpha: 1).cgColor
         } else {
             self.layer.borderWidth = 0.0
@@ -43,11 +43,11 @@ class CardsView: UIView {
         
         if let isSet = isSet {
             if isSet == false {
-                self.layer.borderWidth = 4.0
+                self.layer.borderWidth = 1.1
                 self.layer.borderColor = #colorLiteral(red: 0.6018512845, green: 0.1524831653, blue: 0.3515754342, alpha: 1).cgColor
             }
             if isSet == true {
-                self.layer.borderWidth = 4.0
+                self.layer.borderWidth = 1.1
                 self.layer.borderColor = #colorLiteral(red: 0.2742731273, green: 0.483296752, blue: 0.1377799213, alpha: 1).cgColor
             }
         }

@@ -694,8 +694,8 @@
                                     <color key="baseForegroundColor" systemColor="systemCyanColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playCard5" translatesAutoresizingMaskIntoConstraints="NO" id="SJr-H4-K48">
-                                <rect key="frame" x="242" y="567" width="95" height="149"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="playCard5" translatesAutoresizingMaskIntoConstraints="NO" id="SJr-H4-K48">
+                                <rect key="frame" x="233" y="567" width="104" height="149"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="SbQ-iL-sFN"/>
                                     <constraint firstAttribute="height" constant="149" id="eqY-L9-v3y"/>
@@ -728,8 +728,8 @@
                                     <action selector="dealThreeMoreCards:" destination="vfX-pj-wsY" eventType="touchUpInside" id="5a0-II-NJe"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="135" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-6X-hX5">
-                                <rect key="frame" x="60" y="93" width="243" height="35"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="Scy-nu-OsC">
+                                <rect key="frame" x="60" y="94" width="263.66666666666669" height="35"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restart-2" translatesAutoresizingMaskIntoConstraints="NO" id="Hla-JC-1aN">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
@@ -738,14 +738,21 @@
                                             <constraint firstAttribute="width" constant="45" id="RLd-7l-gQY"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Score:0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-RX-azq">
-                                        <rect key="frame" x="180" y="0.0" width="63" height="35"/>
-                                        <color key="textColor" red="0.32167422130000001" green="0.32791074520000002" blue="0.74825266219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOE-qK-BxQ">
+                                        <rect key="frame" x="164" y="0.0" width="99.666666666666686" height="35"/>
+                                        <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="29"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Score:0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-RX-azq">
+                                <rect key="frame" x="240" y="93" width="63" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.32167422130000001" green="0.32791074520000002" blue="0.74825266219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hlk-vb-5ob" userLabel="Stack View(Deactivated)">
                                 <rect key="frame" x="20" y="54" width="374" height="638"/>
                                 <subviews>
@@ -997,37 +1004,30 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOE-qK-BxQ">
-                                <rect key="frame" x="224.99999999999997" y="93" width="99.666666666666657" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="29"/>
-                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZfP-9D-qQf"/>
                         <color key="backgroundColor" red="0.16997286166542028" green="0.2312398107081696" blue="0.28274208690987124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="Scy-nu-OsC" secondAttribute="trailing" constant="51.333333333333314" id="90g-LL-3jq"/>
                             <constraint firstItem="SJr-H4-K48" firstAttribute="firstBaseline" secondItem="tlL-kt-m1A" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="Gnm-XB-Qhq"/>
+                            <constraint firstItem="Scy-nu-OsC" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="60" id="JB6-tP-sun"/>
+                            <constraint firstItem="tlL-kt-m1A" firstAttribute="firstBaseline" secondItem="Scy-nu-OsC" secondAttribute="baseline" constant="23.333333333333332" symbolType="layoutAnchor" id="JQB-3u-Q5h"/>
                             <constraint firstItem="hlk-vb-5ob" firstAttribute="top" secondItem="ZfP-9D-qQf" secondAttribute="top" constant="10" id="Jbc-R6-ejJ"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="hlk-vb-5ob" secondAttribute="trailing" constant="20" id="P4v-cf-M2Z"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="tlL-kt-m1A" secondAttribute="trailing" constant="16" id="XwH-DD-Kdf"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="bottom" secondItem="hlk-vb-5ob" secondAttribute="bottom" constant="170" id="ZUL-pI-23a"/>
                             <constraint firstItem="hlk-vb-5ob" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="20" id="d63-T4-Zye"/>
-                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="Fjg-6X-hX5" secondAttribute="trailing" constant="72" id="dsa-Bv-uqj"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="bottom" secondItem="tlL-kt-m1A" secondAttribute="bottom" constant="170" id="hvL-gr-kTD"/>
-                            <constraint firstItem="tlL-kt-m1A" firstAttribute="firstBaseline" secondItem="Fjg-6X-hX5" secondAttribute="baseline" constant="12.333333333333334" symbolType="layoutAnchor" id="lWA-pp-0aD"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="SJr-H4-K48" secondAttribute="trailing" constant="38" id="ljJ-Pe-1AP"/>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="16" id="pk6-VE-Pkx"/>
-                            <constraint firstItem="Fjg-6X-hX5" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="60" id="ryv-W4-BIm"/>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="top" secondItem="ZfP-9D-qQf" secondAttribute="top" constant="52" id="vCd-5S-WJx"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="kFB-7z-v0O"/>
                                 <exclude reference="pxT-AD-6fJ"/>
+                                <exclude reference="Efl-RX-azq"/>
                                 <exclude reference="hlk-vb-5ob"/>
-                                <exclude reference="kOE-qK-BxQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -1044,8 +1044,9 @@
                     <connections>
                         <outlet property="cardsBoardView" destination="tlL-kt-m1A" id="C97-yf-beM"/>
                         <outlet property="dealThreeMoreCardButton" destination="Tt6-vv-ZPF" id="8Gy-JV-VWG"/>
-                        <outlet property="discardPileUIImageView" destination="SJr-H4-K48" id="7OQ-v7-0dt"/>
+                        <outlet property="discardPileUIImageView" destination="SJr-H4-K48" id="fIJ-4k-PLy"/>
                         <outlet property="restartImageView" destination="Hla-JC-1aN" id="ega-fY-Lpp"/>
+                        <outlet property="scoreLabelOrigin" destination="kOE-qK-BxQ" id="FzS-rk-PSe"/>
                         <outlet property="setTextTitleOnDiscardPile" destination="dtW-HV-mgm" id="mHB-Sf-rBK"/>
                     </connections>
                 </viewController>
