@@ -13,8 +13,6 @@ class ConcentrationViewController: UIViewController {
         updateViewFromModel()
     }
     
-   
-    
     private lazy var game = Concentration(numberOfPairsOfCards: (buttonsFromFrontLayer.count + 1) / 2)
     private var emoji = [CardConcentration:String]()
     private var cardBackColor: UIColor?

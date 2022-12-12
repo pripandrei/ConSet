@@ -9,7 +9,6 @@ import UIKit
 
 class CardsBoardView: UIView {
     
-    
     private var firstTimeDeal: Bool = true
     
     private var previousCountOfViews = 12
@@ -36,7 +35,6 @@ class CardsBoardView: UIView {
         grid.frame = bounds
         grid.cellCount = numberOfCardsToBeDisplayed
     }
-    
     
     override func layoutSubviews()
     {

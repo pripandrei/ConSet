@@ -11,7 +11,7 @@ class TestIntegrationViewController: UIViewController {
     
     private(set) var setIsPresentInChoosenCards = false
     private var setCards = [CardSet]()
-    private var selectedSetCards = [UIView]()
+    private var threeSetCards = [UIView]()
     private var shouldDealThreeCards = false
     private var firstTimeDeal = true
     private var game = SetGame()
@@ -405,6 +405,47 @@ class TestIntegrationViewController: UIViewController {
         return imageView
     }
     
+    private func initiateFirstDealing(with cardView: CardsView, imageView: UIImageView, gridIndex: CGRect, card: CardSet, delay: inout CGFloat) {
+        self.view.isUserInteractionEnabled = false
+        _ = Timer.scheduledTimer(withTimeInterval: 2.3, repeats: false, block: { _ in
+            self.view.isUserInteractionEnabled = true
+        })
+        
+        cardView.frame = gridIndex
+        cardView.frame.origin = CGPoint(x: cardsBoardView.frame.midX - (gridIndex.width / 1.7) , y: cardsBoardView.frame.midY - (gridIndex.height / 1.7))
+
+        UIViewPropertyAnimator.runningPropertyAnimator(
+            withDuration: 0.7,
+            delay: delay,
+            animations: {
+                cardView.frame = gridIndex.insetBy(dx: 4.0, dy: 4.0)
+                imageView.frame = gridIndex.insetBy(dx: -13, dy: 4)
+//                delay += 0.1
+            },
+            completion: { initial in
+                UIView.transition(
+                    with: imageView,
+                    duration: 1.0,
+                    options: [.transitionFlipFromLeft],
+                    animations: {
+                        imageView.frame = gridIndex.insetBy(dx: 4.0, dy: 4.0)
+                        _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+                            imageView.layer.isHidden = true
+                            imageView.removeFromSuperview()
+                        })
+                    })
+                UIView.transition(
+                    with: cardView,
+                    duration: 1.0,
+                    options: [.transitionFlipFromLeft],
+                    animations: {
+                        cardView.backgroundColor = #colorLiteral(red: 0.2722899914, green: 0.1926242709, blue: 0.2153902054, alpha: 1)
+                        self.setFeatures(for: cardView, with: card)
+                    })
+            })
+        delay += 0.1
+    }
+    
     func updateView() {
         if let _ = dealThreeMoreCardButton, let _ = cardsBoardView {
             
@@ -419,7 +460,9 @@ class TestIntegrationViewController: UIViewController {
                 let viewOfCard = cardsViews[index]
                 
                 if let rect = cardsBoardView.grid[index] {
-                    let imageView = createBackCardImage()
+                    
+                    let imageFromBackOfTheCard = createBackCardImage()
+                    
                     if firstTimeDeal {
                         self.view.isUserInteractionEnabled = false
                         _ = Timer.scheduledTimer(withTimeInterval: 2.3, repeats: false, block: { _ in
@@ -434,19 +477,19 @@ class TestIntegrationViewController: UIViewController {
                             delay: delay,
                             animations: {
                                 viewOfCard.frame = rect.insetBy(dx: 4.0, dy: 4.0)
-                                imageView.frame = rect.insetBy(dx: -13, dy: 4)
+                                imageFromBackOfTheCard.frame = rect.insetBy(dx: -13, dy: 4)
                                 delay += 0.1
                             },
                             completion: { initial in
                                 UIView.transition(
-                                    with: imageView,
+                                    with: imageFromBackOfTheCard,
                                     duration: 1.0,
                                     options: [.transitionFlipFromLeft],
                                     animations: {
-                                        imageView.frame = rect.insetBy(dx: 4.0, dy: 4.0)
+                                        imageFromBackOfTheCard.frame = rect.insetBy(dx: 4.0, dy: 4.0)
                                         _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-                                            imageView.layer.isHidden = true
-                                            imageView.removeFromSuperview()
+                                            imageFromBackOfTheCard.layer.isHidden = true
+                                            imageFromBackOfTheCard.removeFromSuperview()
                                         })
                                     })
                                 UIView.transition(
@@ -459,33 +502,34 @@ class TestIntegrationViewController: UIViewController {
                                     })
                             })
                     }
-                    else
-                    {
+                    else if self.shouldDealThreeCards == false {
+                        self.setFeatures(for: viewOfCard, with: card)
+                        
                         UIViewPropertyAnimator.runningPropertyAnimator(
                             withDuration: 0.2,
                             delay: 0.0,
                             animations: {
-                                if self.shouldDealThreeCards == false {
-                                    self.setFeatures(for: viewOfCard, with: card)
                                     if viewOfCard.isSelected {
                                         viewOfCard.frame = rect.insetBy(dx: 1.5, dy: 1.5)
                                     } else {
                                         viewOfCard.frame = rect.insetBy(dx: 4.0, dy: 4.0)
                                     }
-                                    imageView.removeFromSuperview()
-                                }
-                                else {
-                                    if !(((self.game.cardsOnTable - 3)...self.game.cardsOnTable) ~= index)
-                                    {
-                                        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.5, delay: 0.0, animations: {
-                                            viewOfCard.frame = rect.insetBy(dx: 4.0, dy: 4.0)
-                                            imageView.removeFromSuperview()
-                                        })
-                                    }
-                                }
                             }
                         )
-                        if ((self.game.cardsOnTable - 3)...self.game.cardsOnTable) ~= index && self.shouldDealThreeCards == true
+                        imageFromBackOfTheCard.removeFromSuperview()
+                        
+                    } else if self.shouldDealThreeCards == true {
+                        if !(((self.game.cardsOnTable - 3)...self.game.cardsOnTable) ~= index)
+                        {
+                            UIViewPropertyAnimator.runningPropertyAnimator(
+                                withDuration: 0.5,
+                                delay: 0.0,
+                                animations: {
+                                viewOfCard.frame = rect.insetBy(dx: 4.0, dy: 4.0)
+                            })
+                            imageFromBackOfTheCard.removeFromSuperview()
+                        }
+                        if ((self.game.cardsOnTable - 3)...self.game.cardsOnTable) ~= index
                         {
 //                            viewOfCard.frame = self.dealThreeMoreCardButton.frame.insetBy(dx: 6.0, dy: 6.0)
 //
@@ -495,21 +539,20 @@ class TestIntegrationViewController: UIViewController {
                                 delay: delay,
                                 animations: {
                                     viewOfCard.frame = rect.insetBy(dx: 4.0, dy: 4.0)
-
-                                    imageView.frame = rect.insetBy(dx: -(rect.width / 4.5), dy: 4)
+                                    imageFromBackOfTheCard.frame = rect.insetBy(dx: -(rect.width / 4.5), dy: 4)
                                 },
                                 completion: { initial in
                                     UIView.transition(
-                                        with: imageView,
+                                        with: imageFromBackOfTheCard,
                                         duration: 0.5,
                                         options: .transitionFlipFromLeft,
                                         animations: {
                                             _ = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false, block: { _ in
-                                                imageView.layer.isHidden = true
-                                                imageView.removeFromSuperview()
+                                                imageFromBackOfTheCard.layer.isHidden = true
+                                                imageFromBackOfTheCard.removeFromSuperview()
                                             })
                                         }, completion: {_ in
-                                            imageView.removeFromSuperview()
+                                            imageFromBackOfTheCard.removeFromSuperview()
                                         })
                                     UIView.transition(
                                         with: viewOfCard,
@@ -526,12 +569,12 @@ class TestIntegrationViewController: UIViewController {
                     }
                 }
                 if let cardIsSet = card.cardIsSet, cardIsSet {
-                    selectedSetCards.append(cardsViews[index])
+                    threeSetCards.append(cardsViews[index])
                 }
             }
             
-            if selectedSetCards.count == 3 {
-                handlethreeCardsMatch()
+            if !threeSetCards.isEmpty {
+                handleThreeCardsWhenSet()
             }
             firstTimeDeal = false
             
@@ -546,7 +589,7 @@ class TestIntegrationViewController: UIViewController {
     
     var secondTimeEntered = false
     
-    private func handlethreeCardsMatch() {
+    private func handleThreeCardsWhenSet() {
         self.view.isUserInteractionEnabled = false
         self.game.updatePlayingCards()
         addThreeMoreCards()
@@ -554,15 +597,15 @@ class TestIntegrationViewController: UIViewController {
         var delayForReplacedCards = 0.0
         var indexOfSelectedCards = [Int]()
         
-        for index in 0..<self.selectedSetCards.count {
+        for index in 0..<self.threeSetCards.count {
             
             let discardOrigin = self.discardPileUIImageView.center
-            self.selectedSetCards[index].transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-            cardBehavior.addItem(self.selectedSetCards[index])
+            self.threeSetCards[index].transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+            cardBehavior.addItem(self.threeSetCards[index])
             cardBehavior.toggleItemBehaviours = false
             cardBehavior.collision.translatesReferenceBoundsIntoBoundary = true
             
-            guard let indexOfreplacedCard2 = cardsViews.firstIndex(of: selectedSetCards[index] as! CardsView) else {
+            guard let indexOfreplacedCard2 = cardsViews.firstIndex(of: threeSetCards[index] as! CardsView) else {
                 return
             }
             indexOfSelectedCards.append(indexOfreplacedCard2)
@@ -585,17 +628,26 @@ class TestIntegrationViewController: UIViewController {
                     if let rec = self.cardsBoardView.grid[indexOfreplacedCard2] {
                         replacedCardView2.frame = rec.insetBy(dx: 4.0, dy: 4.0)
                     }
-                    imageView.frame = self.selectedSetCards[index].frame.insetBy(dx: -17, dy: 0.0)
+                    imageView.frame = self.threeSetCards[index].frame.insetBy(dx: -17, dy: 0.0)
                     delayForReplacedCards += 0.4
                 }, completion: { _ in
-                    UIView.transition(with: imageView, duration: 0.7, options: [.transitionFlipFromLeft], animations: {
+                    
+                    UIView.transition(
+                        with: imageView,
+                        duration: 0.7,
+                        options: [.transitionFlipFromLeft],
+                        animations: {
                         _ = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: false, block: { _ in
                             imageView.layer.isHidden = true
                             imageView.removeFromSuperview()
                         })
                     })
                     
-                    UIView.transition(with: replacedCardView2, duration: 0.7, options: [.transitionFlipFromLeft], animations: {
+                    UIView.transition(
+                        with: replacedCardView2,
+                        duration: 0.7,
+                        options: [.transitionFlipFromLeft],
+                        animations: {
                         self.setFeatures(for: replacedCardView2 , with: self.game.playingCards[indexOfSelectedCards[index]])
                         replacedCardView2.backgroundColor = #colorLiteral(red: 0.2722899914, green: 0.1926242709, blue: 0.2153902054, alpha: 1)
                     })
@@ -606,27 +658,27 @@ class TestIntegrationViewController: UIViewController {
                 delay: 0.0,
                 options: .curveEaseIn,
                 animations: {
-                    self.selectedSetCards[index].layer.opacity = 0.99
+                    self.threeSetCards[index].layer.opacity = 0.99
                 },
                 completion:  {_ in
-                    for item in self.selectedSetCards {
+                    for item in self.threeSetCards {
                         self.cardBehavior.removeItem(item)
                     }
                     UIView.animate(
                         withDuration: 0.4,
                         delay: 0.0,
                         animations: {
-                            self.selectedSetCards[index].transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-                            self.cardBehavior.addSnapItem(self.selectedSetCards[index], discardOrigin)
-                            self.selectedSetCards[index].bounds = self.discardPileUIImageView.bounds
-                            self.selectedSetCards[index].layer.borderWidth = 0.0
+                            self.threeSetCards[index].transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+                            self.cardBehavior.addSnapItem(self.threeSetCards[index], discardOrigin)
+                            self.threeSetCards[index].bounds = self.discardPileUIImageView.bounds
+                            self.threeSetCards[index].layer.borderWidth = 0.0
                         },
                         completion: {_ in
                             UIView.animate(
                                 withDuration: 0.8,
                                 delay: 0.0,
                                 animations: {
-                                    self.selectedSetCards[index].layer.opacity = 1.0
+                                    self.threeSetCards[index].layer.opacity = 1.0
                                 },
                                 completion: {_ in
                                     UIView.transition(
@@ -635,7 +687,7 @@ class TestIntegrationViewController: UIViewController {
                                         options: [.transitionFlipFromLeft],
                                         animations: {
                                             _ = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false, block: { _ in
-                                                self.selectedSetCards[index].layer.isHidden = true
+                                                self.threeSetCards[index].layer.isHidden = true
                                             })
                                         })
                                     UIView.transition(
@@ -646,22 +698,22 @@ class TestIntegrationViewController: UIViewController {
                                         
                                     })
                                     UIView.transition(
-                                        with: self.selectedSetCards[index],
+                                        with: self.threeSetCards[index],
                                         duration: 0.5,
                                         options: [.transitionFlipFromLeft],
                                         animations: {
-                                            self.selectedSetCards[index].backgroundColor = UIColor.orange
+                                            self.threeSetCards[index].backgroundColor = UIColor.orange
                                         },
                                         completion: {_ in
                                             self.removeFromSuperViewIfSet()
                                             self.cardsBoardView.setNeedsDisplay()
-                                            self.selectedSetCards = []
+                                            self.threeSetCards = []
                                             self.view.isUserInteractionEnabled = true
                                         })
                                 })
                         })
                 })
-            self.selectedSetCards[index].layer.zPosition = 1
+            self.threeSetCards[index].layer.zPosition = 1
         }
         self.setCount += 1
     }
