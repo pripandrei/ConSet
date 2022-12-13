@@ -360,8 +360,7 @@ class TestIntegrationViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         firstTimeLayoutSubviews = true
     }
-    
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -393,56 +392,16 @@ class TestIntegrationViewController: UIViewController {
 
     func createBackCardImage() -> UIImageView {
         let image = UIImage(named: "playCard5")
-        var imageView: UIImageView = UIImageView()
+        let imageView: UIImageView = UIImageView(image:  image!)
         imageView.contentMode = UIView.ContentMode.scaleAspectFit
-        imageView = UIImageView(image: image!)
+//        imageView = UIImageView(image: image!)
         cardsBoardView.addSubview(imageView)
         imageView.bounds = dealThreeMoreCardButton.bounds.insetBy(dx: 0.0, dy: 6.5)
         imageView.center = dealThreeMoreCardButton.convert(dealThreeMoreCardButton.center, from: dealThreeMoreCardButton).offsetBy(dx: -10, dy: -145)
         imageView.image = image
         imageView.layer.cornerRadius = 10
-        imageView.autoresizingMask = [.flexibleWidth, .flexibleLeftMargin, .flexibleRightMargin]
+//        imageView.autoresizingMask = [.flexibleWidth, .flexibleLeftMargin, .flexibleRightMargin]
         return imageView
-    }
-    
-    private func initiateFirstDealing(with cardView: CardsView, imageView: UIImageView, gridIndex: CGRect, card: CardSet, delay: inout CGFloat) {
-        self.view.isUserInteractionEnabled = false
-        _ = Timer.scheduledTimer(withTimeInterval: 2.3, repeats: false, block: { _ in
-            self.view.isUserInteractionEnabled = true
-        })
-        
-        cardView.frame = gridIndex
-        cardView.frame.origin = CGPoint(x: cardsBoardView.frame.midX - (gridIndex.width / 1.7) , y: cardsBoardView.frame.midY - (gridIndex.height / 1.7))
-
-        UIViewPropertyAnimator.runningPropertyAnimator(
-            withDuration: 0.7,
-            delay: delay,
-            animations: {
-                cardView.frame = gridIndex.insetBy(dx: 4.0, dy: 4.0)
-                imageView.frame = gridIndex.insetBy(dx: -13, dy: 4)
-            },
-            completion: { initial in
-                UIView.transition(
-                    with: imageView,
-                    duration: 1.0,
-                    options: [.transitionFlipFromLeft],
-                    animations: {
-                        imageView.frame = gridIndex.insetBy(dx: 4.0, dy: 4.0)
-                        _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-                            imageView.layer.isHidden = true
-                            imageView.removeFromSuperview()
-                        })
-                    })
-                UIView.transition(
-                    with: cardView,
-                    duration: 1.0,
-                    options: [.transitionFlipFromLeft],
-                    animations: {
-                        cardView.backgroundColor = #colorLiteral(red: 0.2722899914, green: 0.1926242709, blue: 0.2153902054, alpha: 1)
-                        self.setFeatures(for: cardView, with: card)
-                    })
-            })
-        delay += 0.1
     }
     
     func updateView() {
@@ -463,9 +422,9 @@ class TestIntegrationViewController: UIViewController {
                     let imageFromBackOfTheCard = createBackCardImage()
                     
                     if firstTimeDeal {
-                        initiateFirstDealing(with: viewOfCard, imageView: imageFromBackOfTheCard, gridIndex: rect, card: card, delay: &delay)
+                        initiateFirstCardDealing(with: viewOfCard, imageView: imageFromBackOfTheCard, gridIndex: rect, card: card, delay: &delay)
                     }
-                    else if self.shouldDealThreeCards == false {
+                    else if !self.shouldDealThreeCards {
                         self.setFeatures(for: viewOfCard, with: card)
                         
                         UIViewPropertyAnimator.runningPropertyAnimator(
@@ -481,7 +440,7 @@ class TestIntegrationViewController: UIViewController {
                         )
                         imageFromBackOfTheCard.removeFromSuperview()
                         
-                    } else if self.shouldDealThreeCards == true {
+                    } else if self.shouldDealThreeCards {
                         if !(((self.game.cardsOnTable - 3)...self.game.cardsOnTable) ~= index)
                         {
                             UIViewPropertyAnimator.runningPropertyAnimator(
@@ -546,11 +505,48 @@ class TestIntegrationViewController: UIViewController {
                     scoreCount = game.scoreCount
                 }
             }
-        }
-        
+        }   
     }
     
-    var secondTimeEntered = false
+    private func initiateFirstCardDealing(with cardView: CardsView, imageView: UIImageView, gridIndex: CGRect, card: CardSet, delay: inout CGFloat) {
+        self.view.isUserInteractionEnabled = false
+        _ = Timer.scheduledTimer(withTimeInterval: 2.3, repeats: false, block: { _ in
+            self.view.isUserInteractionEnabled = true
+        })
+        
+        cardView.frame = gridIndex
+        cardView.frame.origin = CGPoint(x: cardsBoardView.frame.midX - (gridIndex.width / 1.7) , y: cardsBoardView.frame.midY - (gridIndex.height / 1.7))
+
+        UIViewPropertyAnimator.runningPropertyAnimator(
+            withDuration: 0.7,
+            delay: delay,
+            animations: {
+                cardView.frame = gridIndex.insetBy(dx: 4.0, dy: 4.0)
+                imageView.frame = gridIndex.insetBy(dx: -13, dy: 4)
+            },
+            completion: { initial in
+                UIView.transition(
+                    with: imageView,
+                    duration: 1.0,
+                    options: [.transitionFlipFromLeft],
+                    animations: {
+                        imageView.frame = gridIndex.insetBy(dx: 4.0, dy: 4.0)
+                        _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+                            imageView.layer.isHidden = true
+                            imageView.removeFromSuperview()
+                        })
+                    })
+                UIView.transition(
+                    with: cardView,
+                    duration: 1.0,
+                    options: [.transitionFlipFromLeft],
+                    animations: {
+                        cardView.backgroundColor = #colorLiteral(red: 0.2722899914, green: 0.1926242709, blue: 0.2153902054, alpha: 1)
+                        self.setFeatures(for: cardView, with: card)
+                    })
+            })
+        delay += 0.1
+    }
     
     private func handleThreeCardsWhenSet() {
         self.view.isUserInteractionEnabled = false

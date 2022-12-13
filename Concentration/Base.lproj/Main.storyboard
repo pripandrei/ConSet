@@ -694,30 +694,12 @@
                                     <color key="baseForegroundColor" systemColor="systemCyanColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="playCard5" translatesAutoresizingMaskIntoConstraints="NO" id="SJr-H4-K48">
-                                <rect key="frame" x="233" y="567" width="104" height="149"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="SbQ-iL-sFN"/>
-                                    <constraint firstAttribute="height" constant="149" id="eqY-L9-v3y"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxT-AD-6fJ">
-                                <rect key="frame" x="70" y="99" width="40" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="restart-2"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="newGameButton:" destination="vfX-pj-wsY" eventType="touchUpInside" id="W7L-GU-bkT"/>
-                                </connections>
-                            </button>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tlL-kt-m1A" customClass="CardsBoardView" customModule="Concentration" customModuleProvider="target">
-                                <rect key="frame" x="16" y="143" width="343" height="416"/>
+                                <rect key="frame" x="16" y="143" width="343" height="406"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt6-vv-ZPF">
-                                <rect key="frame" x="60" y="632" width="50" height="69"/>
+                                <rect key="frame" x="60" y="660" width="50" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.7785471907" green="0.02914027609" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
@@ -1004,30 +986,52 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playCard5" translatesAutoresizingMaskIntoConstraints="NO" id="SJr-H4-K48">
+                                <rect key="frame" x="229" y="564" width="94" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="gmt-O1-gGr"/>
+                                    <constraint firstAttribute="width" constant="94" id="n0M-sw-lxl"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxT-AD-6fJ">
+                                <rect key="frame" x="70" y="99" width="40" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="restart-2"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newGameButton:" destination="vfX-pj-wsY" eventType="touchUpInside" id="W7L-GU-bkT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZfP-9D-qQf"/>
                         <color key="backgroundColor" red="0.16997286166542028" green="0.2312398107081696" blue="0.28274208690987124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="Scy-nu-OsC" secondAttribute="trailing" constant="51.333333333333314" id="90g-LL-3jq"/>
-                            <constraint firstItem="SJr-H4-K48" firstAttribute="firstBaseline" secondItem="tlL-kt-m1A" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="Gnm-XB-Qhq"/>
-                            <constraint firstItem="Scy-nu-OsC" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="60" id="JB6-tP-sun"/>
+                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="Scy-nu-OsC" secondAttribute="trailing" constant="-70" id="90g-LL-3jq">
+                                <variation key="heightClass=regular-widthClass=compact" constant="51.333333333333314"/>
+                            </constraint>
+                            <constraint firstItem="SJr-H4-K48" firstAttribute="firstBaseline" secondItem="tlL-kt-m1A" secondAttribute="baseline" constant="15" id="BQe-Mr-pog"/>
+                            <constraint firstItem="Scy-nu-OsC" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="100" id="JB6-tP-sun">
+                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                            </constraint>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="firstBaseline" secondItem="Scy-nu-OsC" secondAttribute="baseline" constant="23.333333333333332" symbolType="layoutAnchor" id="JQB-3u-Q5h"/>
                             <constraint firstItem="hlk-vb-5ob" firstAttribute="top" secondItem="ZfP-9D-qQf" secondAttribute="top" constant="10" id="Jbc-R6-ejJ"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="hlk-vb-5ob" secondAttribute="trailing" constant="20" id="P4v-cf-M2Z"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="tlL-kt-m1A" secondAttribute="trailing" constant="16" id="XwH-DD-Kdf"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="bottom" secondItem="hlk-vb-5ob" secondAttribute="bottom" constant="170" id="ZUL-pI-23a"/>
                             <constraint firstItem="hlk-vb-5ob" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="20" id="d63-T4-Zye"/>
-                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="bottom" secondItem="tlL-kt-m1A" secondAttribute="bottom" constant="170" id="hvL-gr-kTD"/>
-                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="SJr-H4-K48" secondAttribute="trailing" constant="38" id="ljJ-Pe-1AP"/>
+                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="bottom" secondItem="tlL-kt-m1A" secondAttribute="bottom" constant="180" id="hvL-gr-kTD"/>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="16" id="pk6-VE-Pkx"/>
+                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="SJr-H4-K48" secondAttribute="trailing" constant="52" id="qVq-Wc-fOL"/>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="top" secondItem="ZfP-9D-qQf" secondAttribute="top" constant="52" id="vCd-5S-WJx"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="kFB-7z-v0O"/>
-                                <exclude reference="pxT-AD-6fJ"/>
                                 <exclude reference="Efl-RX-azq"/>
                                 <exclude reference="hlk-vb-5ob"/>
+                                <exclude reference="pxT-AD-6fJ"/>
                             </mask>
                         </variation>
                     </view>
