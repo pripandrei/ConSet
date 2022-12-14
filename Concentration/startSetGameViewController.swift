@@ -16,6 +16,10 @@ class startSetGameViewController: UIViewController {
             newGameButton.layer.cornerRadius = 10
         }
     }
+    
+    private var customTabBarController: CustomTabBarController? {
+        return tabBarController as? CustomTabBarController
+    }
 
 //
 //    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -29,14 +33,20 @@ class startSetGameViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         hidesBottomBarWhenPushed = false
+        if let tabBarVc = customTabBarController {
+            tabBarVc.blockRotation = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if let tabBarVc = customTabBarController {
+            tabBarVc.blockRotation = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "New Game", let cvc = segue.destination as? TestIntegrationViewController {
+        if segue.identifier == "New Game", let _ = segue.destination as? TestIntegrationViewController {
             hidesBottomBarWhenPushed = true
         }
     }

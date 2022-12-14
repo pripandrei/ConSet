@@ -392,15 +392,12 @@ class TestIntegrationViewController: UIViewController {
 
     func createBackCardImage() -> UIImageView {
         let image = UIImage(named: "playCard5")
-        let imageView: UIImageView = UIImageView(image:  image!)
+        let imageView = UIImageView(image:  image!)
         imageView.contentMode = UIView.ContentMode.scaleAspectFit
-//        imageView = UIImageView(image: image!)
         cardsBoardView.addSubview(imageView)
-        imageView.bounds = dealThreeMoreCardButton.bounds.insetBy(dx: 0.0, dy: 6.5)
-        imageView.center = dealThreeMoreCardButton.convert(dealThreeMoreCardButton.center, from: dealThreeMoreCardButton).offsetBy(dx: -10, dy: -145)
-        imageView.image = image
-        imageView.layer.cornerRadius = 10
-//        imageView.autoresizingMask = [.flexibleWidth, .flexibleLeftMargin, .flexibleRightMargin]
+        imageView.bounds = dealThreeMoreCardButton.bounds.insetBy(dx: 5.0, dy: 6.5)
+        imageView.center = imageView.convert(imageView.center, from: dealThreeMoreCardButton)
+//        imageView.frame = dealThreeMoreCardButton.convert(dealThreeMoreCardButton.frame, from: dealThreeMoreCardButton).offsetBy(dx: -10, dy: -145)
         return imageView
     }
     
@@ -501,7 +498,7 @@ class TestIntegrationViewController: UIViewController {
             firstTimeDeal = false
             
             if let _ = scoreLabelOrigin {
-                if game.scoreCount > scoreCount {
+                if game.scoreCount != scoreCount {
                     scoreCount = game.scoreCount
                 }
             }
@@ -509,6 +506,7 @@ class TestIntegrationViewController: UIViewController {
     }
     
     private func initiateFirstCardDealing(with cardView: CardsView, imageView: UIImageView, gridIndex: CGRect, card: CardSet, delay: inout CGFloat) {
+        
         self.view.isUserInteractionEnabled = false
         _ = Timer.scheduledTimer(withTimeInterval: 2.3, repeats: false, block: { _ in
             self.view.isUserInteractionEnabled = true

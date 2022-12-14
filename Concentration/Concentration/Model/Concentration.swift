@@ -37,16 +37,7 @@ struct Concentration {
         }
     }
     
-//    mutating func resetGame() {
-//        scoreCount = 0
-//        flipCount = 0
-//        indexOfOneAndOnlyFaceUpCard = nil
-//        for index in 1..<cards.count {
-//            cards[index].isMatched = false
-//            cards[index].isFaceUp = false
-//        }
-//    }
-    
+
     mutating func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "Opps, index of cards is out of range")
         if !cards[index].isMatched {

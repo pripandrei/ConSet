@@ -27,6 +27,7 @@
 		75C589B827A3618300D3CA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C589B627A3618300D3CA65 /* Main.storyboard */; };
 		75C589BA27A3618500D3CA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75C589B927A3618500D3CA65 /* Assets.xcassets */; };
 		75C589BD27A3618500D3CA65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C589BB27A3618500D3CA65 /* LaunchScreen.storyboard */; };
+		75E05793294A1B6B00CFAD3E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E05792294A1B6B00CFAD3E /* CustomTabBarController.swift */; };
 		75E6B68028E665D300A9FA84 /* TestIntegrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E6B67F28E665D300A9FA84 /* TestIntegrationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		75C589B927A3618500D3CA65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75C589BC27A3618500D3CA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75C589BE27A3618500D3CA65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75E05792294A1B6B00CFAD3E /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		75E6B67F28E665D300A9FA84 /* TestIntegrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIntegrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				758EF12C27A8145E009EEF98 /* CardSet.swift */,
 				75C589B427A3618300D3CA65 /* ConcentrationViewController.swift */,
 				75C589B627A3618300D3CA65 /* Main.storyboard */,
+				75E05792294A1B6B00CFAD3E /* CustomTabBarController.swift */,
 				75C589B927A3618500D3CA65 /* Assets.xcassets */,
 				75C589BB27A3618500D3CA65 /* LaunchScreen.storyboard */,
 				75C589BE27A3618500D3CA65 /* Info.plist */,
@@ -217,6 +220,7 @@
 			files = (
 				758B562028E62D74003A735E /* Score.swift in Sources */,
 				75C589B527A3618300D3CA65 /* ConcentrationViewController.swift in Sources */,
+				75E05793294A1B6B00CFAD3E /* CustomTabBarController.swift in Sources */,
 				758B561A28E62D23003A735E /* CardBehavior.swift in Sources */,
 				758B561B28E62D23003A735E /* Shape.swift in Sources */,
 				758EF12B27A8118C009EEF98 /* Concentration.swift in Sources */,

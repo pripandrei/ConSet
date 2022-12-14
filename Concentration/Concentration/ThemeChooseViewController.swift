@@ -18,6 +18,10 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
         return splitViewController?.viewControllers.last as? ConcentrationViewController
     }
     
+    private var customTabBarController: CustomTabBarController? {
+        return tabBarController as? CustomTabBarController
+    }
+    
     var themes = [
         "Sports": [
             "icons": "🏓🏀⛸🤽‍♀️⚾️🏏🏸🥌🏊‍♀️",
@@ -76,14 +80,19 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
         splitViewController?.delegate = self
     }
     
-//    override func viewDidLoad() {
-//            super.viewDidLoad()
-//        }
-//
-//        override func viewWillAppear(_ animated: Bool) {
-//            super.viewWillAppear(animated)
-//
-//        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let customTabBarVC = customTabBarController {
+            customTabBarVC.blockRotation = true
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let customTabBarVC = customTabBarController {
+            customTabBarVC.blockRotation = false
+        }
+    }
 //
 //        override open var shouldAutorotate: Bool {
 //            return false
@@ -150,8 +159,6 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
             }
         }
     }
-    
-
 }
 
 extension UIImage {

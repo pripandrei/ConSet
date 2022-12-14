@@ -69,11 +69,16 @@ class ConcentrationViewController: UIViewController {
     @IBOutlet private weak var startNewGame: UIButton! {
         didSet {
             startNewGame.layer.cornerRadius = 10.0
+            startNewGame.layer.shadowRadius = 10
+            startNewGame.layer.shadowColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+            startNewGame.layer.shadowOpacity = 2.0
+            startNewGame.layer.shadowOffset = CGSize(width: 1, height: 1)
+
         }
     }
     
     var attributesForScoreAndCountLables: [NSAttributedString.Key:Any] = [
-        .foregroundColor: #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),
+        .foregroundColor: #colorLiteral(red: 0.147487998, green: 0.4161318243, blue: 0.5956266522, alpha: 1),
         .strokeWidth: -4,
     ]
     
@@ -152,6 +157,11 @@ class ConcentrationViewController: UIViewController {
         scoreCount = game.scoreCount
         resetView()
         updateViewFromModel()
+//        startNewGame.sendActions(for: .touchUpInside)
+        switch sender.state {
+        case .focused: startNewGame.bounds = startNewGame.bounds.insetBy(dx: 30, dy: 30)
+        default: break
+        }
     }
     
     private func updateViewFromModel() {
