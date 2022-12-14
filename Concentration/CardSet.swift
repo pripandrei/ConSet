@@ -2,7 +2,7 @@
 //  PlayingCards.swift
 //  Set_Game
 //
-//  Created by Andrei Pripa on 8/20/22.
+//  Created by Andrei Pripa on 10/14/22.
 //
 
 import Foundation

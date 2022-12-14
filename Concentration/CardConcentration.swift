@@ -2,7 +2,7 @@
 //  Card.swift
 //  Concentration
 //
-//  Created by Andrei Pripa on 9/16/22.
+//  Created by Andrei Pripa on 9/21/22.
 //
 
 import Foundation

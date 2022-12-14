@@ -676,7 +676,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="Scy-nu-OsC">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="110" translatesAutoresizingMaskIntoConstraints="NO" id="Scy-nu-OsC">
                                 <rect key="frame" x="60" y="94" width="263.66666666666669" height="35"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restart-2" translatesAutoresizingMaskIntoConstraints="NO" id="Hla-JC-1aN">
@@ -686,8 +686,8 @@
                                             <constraint firstAttribute="width" constant="45" id="RLd-7l-gQY"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOE-qK-BxQ">
-                                        <rect key="frame" x="164" y="0.0" width="99.666666666666686" height="35"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOE-qK-BxQ">
+                                        <rect key="frame" x="155" y="0.0" width="108.66666666666669" height="35"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="29"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <nil key="highlightedColor"/>
@@ -955,8 +955,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playCard5" translatesAutoresizingMaskIntoConstraints="NO" id="SJr-H4-K48">
                                 <rect key="frame" x="229" y="564" width="94" height="136"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="136" id="gmt-O1-gGr"/>
-                                    <constraint firstAttribute="width" constant="94" id="n0M-sw-lxl"/>
+                                    <constraint firstAttribute="height" constant="100" id="gmt-O1-gGr">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="136"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="78" id="n0M-sw-lxl">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="94"/>
+                                    </constraint>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxT-AD-6fJ">
@@ -1018,14 +1022,18 @@
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="Scy-nu-OsC" secondAttribute="trailing" constant="-70" id="90g-LL-3jq">
                                 <variation key="heightClass=regular-widthClass=compact" constant="51.333333333333314"/>
                             </constraint>
-                            <constraint firstItem="SJr-H4-K48" firstAttribute="firstBaseline" secondItem="tlL-kt-m1A" secondAttribute="baseline" constant="15" id="BQe-Mr-pog"/>
+                            <constraint firstItem="SJr-H4-K48" firstAttribute="firstBaseline" secondItem="tlL-kt-m1A" secondAttribute="baseline" constant="50" id="BQe-Mr-pog">
+                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                            </constraint>
                             <constraint firstItem="Scy-nu-OsC" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="100" id="JB6-tP-sun">
                                 <variation key="heightClass=regular-widthClass=compact" constant="60"/>
                             </constraint>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="firstBaseline" secondItem="Scy-nu-OsC" secondAttribute="baseline" constant="23.333333333333332" symbolType="layoutAnchor" id="JQB-3u-Q5h"/>
                             <constraint firstItem="hlk-vb-5ob" firstAttribute="top" secondItem="ZfP-9D-qQf" secondAttribute="top" constant="10" id="Jbc-R6-ejJ"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="hlk-vb-5ob" secondAttribute="trailing" constant="20" id="P4v-cf-M2Z"/>
-                            <constraint firstItem="Tt6-vv-ZPF" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="60" id="TlW-la-5iv"/>
+                            <constraint firstItem="Tt6-vv-ZPF" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="110" id="TlW-la-5iv">
+                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                            </constraint>
                             <constraint firstItem="Tt6-vv-ZPF" firstAttribute="firstBaseline" secondItem="tlL-kt-m1A" secondAttribute="baseline" constant="80" id="UCf-sF-NhN"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="tlL-kt-m1A" secondAttribute="trailing" constant="16" id="XwH-DD-Kdf"/>
                             <constraint firstItem="dtW-HV-mgm" firstAttribute="centerX" secondItem="SJr-H4-K48" secondAttribute="centerX" id="Z4I-Ld-2PY"/>
@@ -1033,7 +1041,9 @@
                             <constraint firstItem="hlk-vb-5ob" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="20" id="d63-T4-Zye"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="bottom" secondItem="tlL-kt-m1A" secondAttribute="bottom" constant="180" id="hvL-gr-kTD"/>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="16" id="pk6-VE-Pkx"/>
-                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="SJr-H4-K48" secondAttribute="trailing" constant="52" id="qVq-Wc-fOL"/>
+                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="SJr-H4-K48" secondAttribute="trailing" constant="170" id="qVq-Wc-fOL">
+                                <variation key="heightClass=regular-widthClass=compact" constant="52"/>
+                            </constraint>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="top" secondItem="ZfP-9D-qQf" secondAttribute="top" constant="52" id="vCd-5S-WJx"/>
                         </constraints>
                         <variation key="default">

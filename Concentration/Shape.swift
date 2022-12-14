@@ -2,7 +2,7 @@
 //  Shape.swift
 //  Set_Game
 //
-//  Created by Andrei Pripa on 9/10/22.
+//  Created by Andrei Pripa on 10/23/22.
 //
 
 import UIKit

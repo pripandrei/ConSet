@@ -2,7 +2,7 @@
 //  SetGame.swift
 //  Set_Game
 //
-//  Created by Andrei Pripa on 9/22/22.
+//  Created by Andrei Pripa on 10/19/22.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Concentration
 //
-//  Created by Andrei Pripa on 8/20/22.
+//  Created by Andrei Pripa on 9/21/22.
 //
 import UIKit
 
@@ -73,7 +73,6 @@ class ConcentrationViewController: UIViewController {
             startNewGame.layer.shadowColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
             startNewGame.layer.shadowOpacity = 2.0
             startNewGame.layer.shadowOffset = CGSize(width: 1, height: 1)
-
         }
     }
     

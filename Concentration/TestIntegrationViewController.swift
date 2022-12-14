@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Set_Game
 //
-//  Created by Andrei Pripa on 9/16/22.
+//  Created by Andrei Pripa on 9/27/22.
 //
 
 import UIKit
@@ -56,13 +56,14 @@ class TestIntegrationViewController: UIViewController {
         didSet {
             if let scoreLable = scoreLabelOrigin {
                 scoreLable.attributedText = scoreCountDecorator
+//                scoreLable.sizeToFit()
             }
         }
     }
     
     private let attributedTextForScoreLable: [NSAttributedString.Key:Any] = [
         .foregroundColor : #colorLiteral(red: 0.7960312963, green: 0.6205748916, blue: 0.5277707577, alpha: 1),
-        .strokeWidth: 3
+        .strokeWidth: -3
     ]
     
     private let attributedTextForSetCount: [NSAttributedString.Key:Any] = [
@@ -110,6 +111,10 @@ class TestIntegrationViewController: UIViewController {
             let tap = UITapGestureRecognizer(target: self, action: #selector(showSetByPressingScore))
             scoreLabelOrigin.isUserInteractionEnabled = true
             scoreLabelOrigin.addGestureRecognizer(tap)
+//            scoreLabelOrigin.adjustsFontSizeToFitWidth = true
+//            scoreLabelOrigin.minimumScaleFactor = 0.1
+//            scoreLabelOrigin.sizeToFit()
+//            scoreLabelOrigin.numberOfLines = 0
             scoreLabelOrigin.attributedText = scoreCountDecorator
         }
     }

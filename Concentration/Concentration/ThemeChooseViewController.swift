@@ -2,7 +2,7 @@
 //  ThemeChooseViewController.swift
 //  Concentration
 //
-//  Created by Andrei Pripa on 10/8/22.
+//  Created by Andrei Pripa on 11/8/22.
 //
 
 import UIKit
@@ -82,27 +82,17 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let customTabBarVC = customTabBarController {
-            customTabBarVC.blockRotation = true
+        if let customTabBarController = customTabBarController {
+            customTabBarController.blockRotation = true
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if let customTabBarVC = customTabBarController {
-            customTabBarVC.blockRotation = false
+        if let customTabBarController = customTabBarController {
+            customTabBarController.blockRotation = false
         }
     }
-//
-//        override open var shouldAutorotate: Bool {
-//            return false
-//        }
-    
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//       get {
-//          return .portrait
-//       }
-//    }
     
     /// splitViewController was removed
     ///

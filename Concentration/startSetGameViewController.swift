@@ -26,22 +26,21 @@ class startSetGameViewController: UIViewController {
 //        return .portrait
 //    }
     
-    
-
-    
-
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         hidesBottomBarWhenPushed = false
-        if let tabBarVc = customTabBarController {
-            tabBarVc.blockRotation = false
+        
+        if let tabBarController = customTabBarController {
+            tabBarController.blockRotation = false
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let tabBarVc = customTabBarController {
-            tabBarVc.blockRotation = true
+        
+        if let tabBarController = customTabBarController {
+            tabBarController.blockRotation = true
         }
     }
     
