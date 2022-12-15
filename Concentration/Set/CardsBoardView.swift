@@ -10,8 +10,7 @@ import UIKit
 class CardsBoardView: UIView {
     
     private var firstTimeDeal: Bool = true
-    
-    private var previousCountOfViews = 12
+    private var previousCountOfViews: Int = 12
     
     lazy var grid = Grid(layout: .aspectRatio(0.6777), frame: bounds)
     

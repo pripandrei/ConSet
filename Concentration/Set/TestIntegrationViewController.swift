@@ -453,9 +453,6 @@ class TestIntegrationViewController: UIViewController {
                         }
                         if ((self.game.cardsOnTable - 3)...self.game.cardsOnTable) ~= index
                         {
-//                            viewOfCard.frame = self.dealThreeMoreCardButton.frame.insetBy(dx: 6.0, dy: 6.0)
-//
-//                            viewOfCard.center = self.dealThreeMoreCardButton.convert(self.dealThreeMoreCardButton.center, to: viewOfCard).offsetBy(dx: 9.0, dy: 2.5)
                             UIViewPropertyAnimator.runningPropertyAnimator(
                                 withDuration: 0.5,
                                 delay: delay,

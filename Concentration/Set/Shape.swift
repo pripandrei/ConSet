@@ -84,7 +84,6 @@ struct Shape {
 
 extension Shape {
 
-    /// Ratios that determine the card's size
     private struct SizeRatio {
         static let shapeCardSizeToBoundsSize: CGFloat = 0.3
         static let cornerFontSizeToBoundsHeight: CGFloat = 0.085
@@ -93,17 +92,14 @@ extension Shape {
         static let faceCardImageSizeToBoundsSize: CGFloat = 0.75
     }
 
-    /// Corner radius
     private var cornerRadius: CGFloat {
         return boundsFromViewCard.size.height * SizeRatio.cornerRadiusToBoundsHeight
     }
 
-    /// Corner offset
     private var cornerOffset: CGFloat {
         return cornerRadius * SizeRatio.cornerOffsetToCornerRadius
     }
 
-    /// The font size for the corner text
     private var cornerFontSize: CGFloat {
         return boundsFromViewCard.size.height * SizeRatio.cornerFontSizeToBoundsHeight
     }
