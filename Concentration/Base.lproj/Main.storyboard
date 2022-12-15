@@ -606,7 +606,7 @@
         <!--Set-->
         <scene sceneID="WUg-6I-LcG">
             <objects>
-                <navigationController id="Hq8-pT-98P" customClass="SetNavigationController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="Hq8-pT-98P" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Set" image="24x24 8" id="APR-MT-WBE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vsB-ED-Zbb">
                         <rect key="frame" x="0.0" y="47" width="375" height="44"/>
