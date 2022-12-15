@@ -126,7 +126,6 @@
 			children = (
 				75F5F23E294B19E000B69775 /* Set */,
 				75B3FFBE292F07E6002C7F3F /* Concentration */,
-				7522EE8129219EC100F4708B /* startSetGameViewController.swift */,
 				75C589B627A3618300D3CA65 /* Main.storyboard */,
 				75E05792294A1B6B00CFAD3E /* CustomTabBarController.swift */,
 				75C589B927A3618500D3CA65 /* Assets.xcassets */,
@@ -141,6 +140,7 @@
 		75F5F23E294B19E000B69775 /* Set */ = {
 			isa = PBXGroup;
 			children = (
+				7522EE8129219EC100F4708B /* startSetGameViewController.swift */,
 				75E6B67F28E665D300A9FA84 /* TestIntegrationViewController.swift */,
 				758EF12C27A8145E009EEF98 /* CardSet.swift */,
 				758B561728E62D23003A735E /* CardBehavior.swift */,
