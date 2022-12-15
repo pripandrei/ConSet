@@ -72,6 +72,8 @@
 		75B3FFBE292F07E6002C7F3F /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				758B562128E62F42003A735E /* CardConcentration.swift */,
+				75C589B427A3618300D3CA65 /* ConcentrationViewController.swift */,
 				75B3FFC1292F0943002C7F3F /* Util */,
 				75B3FFBF292F081B002C7F3F /* Model */,
 				7515B1CA288F29F3006BEEBF /* ThemeChooseViewController.swift */,
@@ -122,29 +124,43 @@
 		75C589AF27A3618300D3CA65 /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				75F5F23E294B19E000B69775 /* Set */,
 				75B3FFBE292F07E6002C7F3F /* Concentration */,
 				7522EE8129219EC100F4708B /* startSetGameViewController.swift */,
-				75E6B67F28E665D300A9FA84 /* TestIntegrationViewController.swift */,
-				758EF12C27A8145E009EEF98 /* CardSet.swift */,
-				75C589B427A3618300D3CA65 /* ConcentrationViewController.swift */,
 				75C589B627A3618300D3CA65 /* Main.storyboard */,
 				75E05792294A1B6B00CFAD3E /* CustomTabBarController.swift */,
 				75C589B927A3618500D3CA65 /* Assets.xcassets */,
 				75C589BB27A3618500D3CA65 /* LaunchScreen.storyboard */,
 				75C589BE27A3618500D3CA65 /* Info.plist */,
-				758B560F28E62CB4003A735E /* CardsBoardView.swift */,
-				758B561228E62CB4003A735E /* CardsView.swift */,
-				758B561128E62CB4003A735E /* Grid.swift */,
+				758B561F28E62D74003A735E /* Score.swift */,
+				75F5F23F294B19FE00B69775 /* Supporting Files  */,
+			);
+			path = Concentration;
+			sourceTree = "<group>";
+		};
+		75F5F23E294B19E000B69775 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				75E6B67F28E665D300A9FA84 /* TestIntegrationViewController.swift */,
+				758EF12C27A8145E009EEF98 /* CardSet.swift */,
 				758B561728E62D23003A735E /* CardBehavior.swift */,
 				758B561928E62D23003A735E /* SetGame.swift */,
 				758B561828E62D23003A735E /* Shape.swift */,
 				758B561D28E62D5C003A735E /* Deck.swift */,
-				758B561F28E62D74003A735E /* Score.swift */,
-				758B562128E62F42003A735E /* CardConcentration.swift */,
+				758B560F28E62CB4003A735E /* CardsBoardView.swift */,
+				758B561228E62CB4003A735E /* CardsView.swift */,
+				758B561128E62CB4003A735E /* Grid.swift */,
+			);
+			path = Set;
+			sourceTree = "<group>";
+		};
+		75F5F23F294B19FE00B69775 /* Supporting Files  */ = {
+			isa = PBXGroup;
+			children = (
 				758B562328E6341D003A735E /* AppDelegate.swift */,
 				758B562428E6341D003A735E /* SceneDelegate.swift */,
 			);
-			path = Concentration;
+			path = "Supporting Files ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

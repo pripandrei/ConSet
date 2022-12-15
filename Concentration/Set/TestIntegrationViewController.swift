@@ -350,8 +350,6 @@ class TestIntegrationViewController: UIViewController {
         gameStart = false
     }
     
-    
-
     func removeFromSuperViewIfSet() {
         cardsViews = cardsViews.filter {
             if let isset = $0.isSet, isset {

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct CardSet: CustomStringConvertible, Equatable {
     
     static func == (lhs: CardSet, rhs: CardSet) -> Bool {

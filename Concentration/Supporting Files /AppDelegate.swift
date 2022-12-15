@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Set_Game
 //
-//  Created by Andrei Pripa on 8/15/22.
+//  Created by Andrei Pripa on 9/18/22.
 //
 
 import UIKit

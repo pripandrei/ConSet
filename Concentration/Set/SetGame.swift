@@ -10,20 +10,38 @@ import Foundation
 
 struct SetGame {
     
-    var scoreCount = 0
+    private(set) var selectedCards = [CardSet]()
+    private(set) var cardsOnTable = 12
     
+    private(set) var dateObserver = Date() {
+        didSet {
+            interval = dateObserver.timeIntervalSince(oldValue)
+        }
+    }
+    
+    var scoreCount = 0
     var playingCards = [CardSet]()
     
-    private(set) var selectedCards = [CardSet]()
-    
-    private(set) var cardsOnTable = 12
+    var interval = Double() {
+        didSet {
+            switch interval
+            {
+                case 1...10: scoreCount += 5
+                case 10...15: scoreCount += 4
+                case 15...20: scoreCount += 3
+                case 20...25: scoreCount += 2
+                case 25...30: scoreCount += 1
+                default: scoreCount += 0
+            }
+        }
+    }
     
     mutating func shuffleCards() {
         playingCards.shuffle()
     }
     
-    mutating func updateScoreCount() {
-        
+    mutating func updateScoreCount()
+    {
         let cardIsSet = playingCards.first { $0.cardIsSet == true || $0.cardIsSet == false }
         
         if let cardIsSet = cardIsSet {
@@ -129,27 +147,6 @@ struct SetGame {
             return true
         }
         return false
-    }
-
-    var interval = Double() {
-        didSet {
-            switch interval
-            {
-                case 1...10: scoreCount += 5
-                case 10...15: scoreCount += 4
-                case 15...20: scoreCount += 3
-                case 20...25: scoreCount += 2
-                case 25...30: scoreCount += 1
-                default: scoreCount += 0
-            }
-        }
-    }
-    
-    private(set) var dateObserver = Date() {
-        didSet {
-            interval = dateObserver.timeIntervalSince(oldValue)
-//            interval = Date().timeIntervalSince(oldValue)
-        }
     }
     
     mutating func chooseCard(at index: Int) {
