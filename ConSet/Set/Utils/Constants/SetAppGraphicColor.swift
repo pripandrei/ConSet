@@ -1,11 +1,4 @@
-//
-//  TestConst.swift
-//  ConSet
-//
-//  Created by Andrei Pripa on 12/16/22.
-//
 
-//import Foundation
 import UIKit
 
 struct SetGraphicColor {
@@ -25,24 +18,3 @@ struct SetGraphicColor {
     }
 }
 
-
-
-//enum ScoreLabel {
-//    static let foregroundColor = #colorLiteral(red: 0.7960312963, green: 0.6205748916, blue: 0.5277707577, alpha: 1)
-//}
-//
-//enum ScoreCount {
-//    static let foregroundColor = #colorLiteral(red: 0.44463709, green: 0.2662724555, blue: 0.2968143821, alpha: 1)
-//}
-//
-//enum CardView {
-//    static let backColor = #colorLiteral(red: 0.2722899914, green: 0.1926242709, blue: 0.2153902054, alpha: 1)
-//}
-//
-//enum SetCards {
-//    static let hintColor = #colorLiteral(red: 0.09182011336, green: 0.5400947332, blue: 0.3297850788, alpha: 1)
-//}
-
-struct Asde {
-    
-}

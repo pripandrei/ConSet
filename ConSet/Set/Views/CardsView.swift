@@ -1,8 +1,3 @@
-//
-//  CardsView.swift
-//  Set_Game
-//
-//  Created by Andrei Pripa on 10/19/22.
 
 import UIKit
 

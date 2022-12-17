@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  Set_Game
-//
-//  Created by Andrei Pripa on 9/27/22.
-//
 
 import UIKit
 

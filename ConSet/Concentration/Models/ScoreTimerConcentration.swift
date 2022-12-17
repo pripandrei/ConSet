@@ -1,9 +1,3 @@
-//
-//  Timer.swift
-//  Concentration
-//
-//  Created by Andrei Pripa on 10/11/22.
-//
 
 import Foundation
 

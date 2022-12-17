@@ -112,13 +112,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		75933B6C294C7A1800CB6E2F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		75933B70294C93E300CB6E2F /* Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				759D71AA294DDB68003324B4 /* Utils */,
-				75933B6C294C7A1800CB6E2F /* Views */,
 				75933B6B294C7A0C00CB6E2F /* Controllers */,
 				75B3FFBF292F081B002C7F3F /* Models */,
 			);
