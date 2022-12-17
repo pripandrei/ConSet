@@ -25,6 +25,7 @@
 		75933B5E294B96D000CB6E2F /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75933B5D294B96D000CB6E2F /* Concentration.swift */; };
 		759D71A9294CE271003324B4 /* SetAppGraphicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759D71A8294CE271003324B4 /* SetAppGraphicColor.swift */; };
 		759D71AD294DDB9F003324B4 /* ConcentrationAppGraphicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759D71AC294DDB9F003324B4 /* ConcentrationAppGraphicColor.swift */; };
+		759D71AF294DF601003324B4 /* ThemeEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759D71AE294DF601003324B4 /* ThemeEmoji.swift */; };
 		75C589B527A3618300D3CA65 /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C589B427A3618300D3CA65 /* ConcentrationViewController.swift */; };
 		75C589B827A3618300D3CA65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75C589B627A3618300D3CA65 /* Main.storyboard */; };
 		75C589BA27A3618500D3CA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75C589B927A3618500D3CA65 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		75933B5D294B96D000CB6E2F /* Concentration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		759D71A8294CE271003324B4 /* SetAppGraphicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppGraphicColor.swift; sourceTree = "<group>"; };
 		759D71AC294DDB9F003324B4 /* ConcentrationAppGraphicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationAppGraphicColor.swift; sourceTree = "<group>"; };
+		759D71AE294DF601003324B4 /* ThemeEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEmoji.swift; sourceTree = "<group>"; };
 		75C589AD27A3618300D3CA65 /* ConSet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConSet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C589B427A3618300D3CA65 /* ConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
 		75C589B727A3618300D3CA65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				759D71AC294DDB9F003324B4 /* ConcentrationAppGraphicColor.swift */,
+				759D71AE294DF601003324B4 /* ThemeEmoji.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				75E6B68028E665D300A9FA84 /* SetViewController.swift in Sources */,
 				7522EE8229219EC100F4708B /* StartSetGameViewController.swift in Sources */,
 				758B562528E6341D003A735E /* AppDelegate.swift in Sources */,
+				759D71AF294DF601003324B4 /* ThemeEmoji.swift in Sources */,
 				758B561528E62CB4003A735E /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

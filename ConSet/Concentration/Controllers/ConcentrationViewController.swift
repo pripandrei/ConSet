@@ -22,8 +22,8 @@ class ConcentrationViewController: UIViewController {
     
     var defaultTheme: [String : Any]? = [
             "icons": "🎹🎼🎧🎸🪘🎻🪗🎺🎷",
-            "backgroundColor" : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
-            "cardColor": #colorLiteral(red: 0.7352408183, green: 0.5866306935, blue: 0.6192299884, alpha: 1)
+            "backgroundColor" : ConcentrationGraphicColor.ThemeColor.musicBackgroundColor,
+            "cardColor": ConcentrationGraphicColor.ThemeColor.musicCardColor
     ]
     
     var numberOfPairsOfCards: Int {
@@ -75,7 +75,7 @@ class ConcentrationViewController: UIViewController {
     }
     
     var attributesForScoreAndCountLables: [NSAttributedString.Key:Any] = [
-        .foregroundColor: #colorLiteral(red: 0.147487998, green: 0.4161318243, blue: 0.5956266522, alpha: 1),
+        .foregroundColor: ConcentrationGraphicColor.scoreAndCoundLablesColor,
         .strokeWidth: -4,
     ]
     
@@ -84,7 +84,7 @@ class ConcentrationViewController: UIViewController {
         didSet {
             for button in buttonsFromFrontLayer {
                 button.layer.cornerRadius = 5
-                button.backgroundColor = #colorLiteral(red: 0.664758265, green: 0.2567061186, blue: 0.635348022, alpha: 1)
+//                button.backgroundColor = #colorLiteral(red: 0.664758265, green: 0.2567061186, blue: 0.635348022, alpha: 1)
             }
         }
     }
@@ -95,9 +95,9 @@ class ConcentrationViewController: UIViewController {
                 button.layer.cornerRadius = 5
                 button.layer.shadowRadius = 3
                 button.layer.shadowOpacity = 0.65
-                button.layer.shadowOffset = CGSize(width: 2, height: 4)
-                button.layer.shadowColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
-                button.backgroundColor = #colorLiteral(red: 0.664758265, green: 0.2567061186, blue: 0.635348022, alpha: 1)
+                button.layer.shadowOffset = CGSize(width: 2, height: 3)
+//                button.layer.shadowColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+//                button.backgroundColor = #colorLiteral(red: 0.664758265, green: 0.2567061186, blue: 0.635348022, alpha: 1)
             }
         }
     }
@@ -105,7 +105,7 @@ class ConcentrationViewController: UIViewController {
     private func adjustShadow(for viewType: UIView) {
         viewType.layer.cornerRadius = 10.0
         viewType.layer.shadowRadius = 7.0
-        viewType.layer.shadowColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        viewType.layer.shadowColor = ConcentrationGraphicColor.flipScoreNewGameShadowColor.cgColor
         viewType.layer.shadowOpacity = 2.0
         viewType.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
@@ -171,7 +171,7 @@ class ConcentrationViewController: UIViewController {
                 if card.isFaceUp {
                     if index == indexOfTouchedCard {
                         UIView.transition(with: button, duration: 0.7, options: [.transitionCurlUp], animations: {
-                            button.backgroundColor = #colorLiteral(red: 0.7517526746, green: 0.2261639833, blue: 0.4292668104, alpha: 1)
+                            button.backgroundColor = ConcentrationGraphicColor.revealedCardColor
                         })
                     }
                     button.setTitle((emoji(for: card)), for: .normal)

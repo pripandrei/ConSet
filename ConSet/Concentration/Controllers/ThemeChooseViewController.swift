@@ -21,38 +21,36 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
         return tabBarController as? CustomTabBarController
     }
     
-    
-    
     var themes = [
         "Sports": [
-            "icons": "🏓🏀⛸🤽‍♀️⚾️🏏🏸🥌🏊‍♀️",
-            "backgroundColor" : #colorLiteral(red: 0.2973142862, green: 0.573012352, blue: 0.6714107394, alpha: 1),
-            "cardColor": #colorLiteral(red: 0.2970246077, green: 0.6000617743, blue: 0.6640752554, alpha: 1)
+            "icons": Emoji.sportEmoji,
+            "backgroundColor" : ConcentrationGraphicColor.ThemeColor.sportsBackgroundColor,
+            "cardColor": ConcentrationGraphicColor.ThemeColor.sportsCardColor
         ],
         "People": [
-            "icons": "🧑‍🔬🧑‍🔧👨‍💻👩‍🏭👨‍🎓🧑🏻‍🍳🥷🏽👨🏼‍🚀🦸‍♂️",
-            "backgroundColor" : #colorLiteral(red: 0.6753154397, green: 0.5716267228, blue: 0.8777912259, alpha: 1),
-            "cardColor": #colorLiteral(red: 0.7574701997, green: 0.5362252312, blue: 0.6736143881, alpha: 1)
+            "icons": Emoji.peopleEmoji,
+            "backgroundColor" : ConcentrationGraphicColor.ThemeColor.peopleBackgroundColor,
+            "cardColor": ConcentrationGraphicColor.ThemeColor.peopleCardColor
         ],
         "Animals": [
-            "icons": "🐥🦔🦑🦢🦩🕊🐩🐋🦍",
-            "backgroundColor" : #colorLiteral(red: 0.804077208, green: 0.4270347357, blue: 0.5741969943, alpha: 1),
-            "cardColor": #colorLiteral(red: 0.8045666881, green: 0.5222281085, blue: 0.5204966411, alpha: 1)
+            "icons": Emoji.animalEmoji,
+            "backgroundColor" : ConcentrationGraphicColor.ThemeColor.animalBackgroundColor,
+            "cardColor": ConcentrationGraphicColor.ThemeColor.animalCardColor
         ],
         "Music": [
-            "icons": "🎹🎼🎧🎸🪘🎻🪗🎺🎷",
-            "backgroundColor" : #colorLiteral(red: 0.7219626307, green: 0.6096276641, blue: 0.5993572474, alpha: 1),
-            "cardColor": #colorLiteral(red: 0.8175247908, green: 0.6872603297, blue: 0.6778723598, alpha: 1)
+            "icons": Emoji.musicEmoji,
+            "backgroundColor" : ConcentrationGraphicColor.ThemeColor.musicBackgroundColor,
+            "cardColor": ConcentrationGraphicColor.ThemeColor.musicCardColor
         ],
         "Food": [
-            "icons": "🍏🍗🧀🫔🥘🍚🎂🍣🍫",
-            "backgroundColor" : #colorLiteral(red: 0.4190964103, green: 0.1856082678, blue: 0.1921211481, alpha: 1),
-            "cardColor": #colorLiteral(red: 0.6808553479, green: 0.3046491889, blue: 0.2751860591, alpha: 1)
+            "icons": Emoji.foodEmoji,
+            "backgroundColor" : ConcentrationGraphicColor.ThemeColor.foodBackgroundColor,
+            "cardColor": ConcentrationGraphicColor.ThemeColor.foodCardColor
         ],
         "Weather": [
-            "icons": "☀️❄️⛈🌊💨🌈🌪☔️☃️",
-            "backgroundColor" : #colorLiteral(red: 0.3640783131, green: 0.579726398, blue: 0.5051891208, alpha: 1),
-            "cardColor": #colorLiteral(red: 0.2993791401, green: 0.5020524263, blue: 0.3415590525, alpha: 1)
+            "icons": Emoji.weatherEmoji,
+            "backgroundColor" : ConcentrationGraphicColor.ThemeColor.weatherBackgroundColor,
+            "cardColor": ConcentrationGraphicColor.ThemeColor.weatherCardColor
         ],
     ]
     
@@ -94,12 +92,6 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
             customTabBarController.blockRotation = false
         }
     }
-    
-    /// splitViewController was removed
-    ///
-//    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-//        return true
-//    }
     
     @IBOutlet var themeButtons: [UIButton]! {
         didSet {
@@ -150,6 +142,13 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
             }
         }
     }
+    
+    /// splitViewController was removed
+    ///
+//    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+//        return true
+//    }
+    
 }
 
 extension UIImage {
