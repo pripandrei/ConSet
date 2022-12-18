@@ -31,7 +31,6 @@ struct Concentration {
             }
         }
     }
-    
 
     mutating func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "Opps, index of cards is out of range")

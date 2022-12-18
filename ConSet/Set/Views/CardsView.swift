@@ -22,10 +22,6 @@ class CardsView: UIView {
     
     let cardsBoardView = CardsBoardView()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-
     override func draw(_ rect: CGRect)
     {
         self.layer.masksToBounds = true
@@ -87,6 +83,8 @@ class CardsView: UIView {
         }
     }
 }
+
+    
 
 extension UIBezierPath {
     

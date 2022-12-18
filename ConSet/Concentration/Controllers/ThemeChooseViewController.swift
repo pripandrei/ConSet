@@ -2,7 +2,7 @@
 //  ThemeChooseViewController.swift
 //  Concentration
 //
-//  Created by Andrei Pripa on 11/8/22.
+//  Created by Andrei Pripa on 11/6/22.
 //
 
 import UIKit
@@ -93,6 +93,22 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "Choose Theme"
+        {
+            if let themeButton = (sender as? UIButton), let indexOfButton = themeButtons.firstIndex(of: themeButton)
+            {
+                themeIndex = indexOfButton
+                if let cvc = segue.destination as? ConcentrationViewController {
+                    cvc.theme = choosenTheme
+                    cvc.hidesBottomBarWhenPushed = true
+                    lastSeguedToConcentrationViewController = cvc
+                }
+            }
+        }
+    }
+    
     @IBOutlet var themeButtons: [UIButton]! {
         didSet {
             var countOfImages = 0
@@ -124,22 +140,6 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
         }
         else {
             performSegue(withIdentifier: "Choose Theme", sender: sender)
-        }
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.identifier == "Choose Theme"
-        {
-            if let themeButton = (sender as? UIButton), let indexOfButton = themeButtons.firstIndex(of: themeButton)
-            {
-                themeIndex = indexOfButton
-                if let cvc = segue.destination as? ConcentrationViewController {
-                    cvc.theme = choosenTheme
-                    cvc.hidesBottomBarWhenPushed = true
-                    lastSeguedToConcentrationViewController = cvc
-                }
-            }
         }
     }
     

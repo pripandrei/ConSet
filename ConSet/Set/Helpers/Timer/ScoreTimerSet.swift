@@ -2,7 +2,7 @@
 //  Score.swift
 //  Set_Game
 //
-//  Created by Andrei Pripa on 10/5/22.
+//  Created by Andrei Pripa on 11/8/22.
 //
 
 import Foundation

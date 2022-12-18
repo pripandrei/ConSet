@@ -73,9 +73,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="638" id="2Vg-2q-ICO"/>
-                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="People" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDX-g5-97n">
                                 <rect key="frame" x="143" y="375" width="87" height="34"/>
@@ -1048,7 +1045,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="180"/>
                             </constraint>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="16" id="pk6-VE-Pkx"/>
-                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="SJr-H4-K48" secondAttribute="trailing" constant="170" id="qVq-Wc-fOL">
+                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="SJr-H4-K48" secondAttribute="trailing" constant="160" id="qVq-Wc-fOL">
                                 <variation key="heightClass=regular-widthClass=compact" constant="52"/>
                             </constraint>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="top" secondItem="ZfP-9D-qQf" secondAttribute="top" constant="52" id="vCd-5S-WJx"/>

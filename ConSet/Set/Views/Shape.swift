@@ -14,6 +14,14 @@ struct Shape {
 
     var ViewCardBounds = CGRect()
     
+    var cardShape: UIBezierPath {
+        switch shapeStyle {
+        case .diamond: return drawDiamond(ViewCardBounds)
+        case .oval: return drawOval(ViewCardBounds)
+        case .squiggle: return drawSquiggle(ViewCardBounds)
+        }
+    }
+    
     private func drawDiamond(_ rect: CGRect) -> UIBezierPath {
         
         let path = UIBezierPath()
@@ -62,14 +70,6 @@ struct Shape {
         return path
     }
     
-    var cardShape: UIBezierPath {
-        switch shapeStyle {
-        case .diamond: return drawDiamond(ViewCardBounds)
-        case .oval: return drawOval(ViewCardBounds)
-        case .squiggle: return drawSquiggle(ViewCardBounds)
-        }
-    }
-    
     init(forCardWith bounds: CGRect, shapeStyle: ShapeStyle) {
         self.ViewCardBounds = bounds
         self.shapeStyle = shapeStyle
@@ -101,4 +101,5 @@ struct Shape {
 //        return boundsFromViewCard.size.height * SizeRatio.cornerFontSizeToBoundsHeight
 //    }
 //}
+
 

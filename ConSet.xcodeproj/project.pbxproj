@@ -21,7 +21,7 @@
 		758B562228E62F42003A735E /* CardConcentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B562128E62F42003A735E /* CardConcentration.swift */; };
 		758B562528E6341D003A735E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B562328E6341D003A735E /* AppDelegate.swift */; };
 		758B562628E6341D003A735E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B562428E6341D003A735E /* SceneDelegate.swift */; };
-		758EF12D27A8145E009EEF98 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758EF12C27A8145E009EEF98 /* CardSet.swift */; };
+		758EF12D27A8145E009EEF98 /* SetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758EF12C27A8145E009EEF98 /* SetCard.swift */; };
 		75933B5E294B96D000CB6E2F /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75933B5D294B96D000CB6E2F /* Concentration.swift */; };
 		759D71A9294CE271003324B4 /* SetAppGraphicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759D71A8294CE271003324B4 /* SetAppGraphicColor.swift */; };
 		759D71AD294DDB9F003324B4 /* ConcentrationAppGraphicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759D71AC294DDB9F003324B4 /* ConcentrationAppGraphicColor.swift */; };
@@ -49,7 +49,7 @@
 		758B562128E62F42003A735E /* CardConcentration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardConcentration.swift; sourceTree = "<group>"; };
 		758B562328E6341D003A735E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		758B562428E6341D003A735E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		758EF12C27A8145E009EEF98 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
+		758EF12C27A8145E009EEF98 /* SetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCard.swift; sourceTree = "<group>"; };
 		75933B5D294B96D000CB6E2F /* Concentration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		759D71A8294CE271003324B4 /* SetAppGraphicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppGraphicColor.swift; sourceTree = "<group>"; };
 		759D71AC294DDB9F003324B4 /* ConcentrationAppGraphicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationAppGraphicColor.swift; sourceTree = "<group>"; };
@@ -88,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				75933B71294C946B00CB6E2F /* Game */,
-				75933B70294C93E300CB6E2F /* Timer */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,7 +122,7 @@
 		75933B71294C946B00CB6E2F /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				758EF12C27A8145E009EEF98 /* CardSet.swift */,
+				758EF12C27A8145E009EEF98 /* SetCard.swift */,
 				758B561928E62D23003A735E /* SetGame.swift */,
 				758B561D28E62D5C003A735E /* Deck.swift */,
 			);
@@ -179,12 +178,55 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		759D71B4294F83BD003324B4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				759D71B6294F83E9003324B4 /* Grid */,
+				759D71B5294F83D1003324B4 /* Behavior */,
+				75933B70294C93E300CB6E2F /* Timer */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		759D71B5294F83D1003324B4 /* Behavior */ = {
+			isa = PBXGroup;
+			children = (
+				758B561728E62D23003A735E /* CardBehavior.swift */,
+			);
+			path = Behavior;
+			sourceTree = "<group>";
+		};
+		759D71B6294F83E9003324B4 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				758B561128E62CB4003A735E /* Grid.swift */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
+		759D71B7294F8461003324B4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				759D71B8294F8469003324B4 /* Timer */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		759D71B8294F8469003324B4 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				75145D5927BC4FAA00157FB1 /* ScoreTimerConcentration.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		75B3FFBE292F07E6002C7F3F /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
 				759D71AA294DDB68003324B4 /* Utils */,
 				75933B6B294C7A0C00CB6E2F /* Controllers */,
 				75B3FFBF292F081B002C7F3F /* Models */,
+				759D71B7294F8461003324B4 /* Helpers */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -192,7 +234,6 @@
 		75B3FFBF292F081B002C7F3F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				75145D5927BC4FAA00157FB1 /* ScoreTimerConcentration.swift */,
 				758B562128E62F42003A735E /* CardConcentration.swift */,
 				75933B5D294B96D000CB6E2F /* Concentration.swift */,
 			);
@@ -236,9 +277,8 @@
 				75933B6A294C786F00CB6E2F /* Views */,
 				75933B68294C782000CB6E2F /* Controllers */,
 				75933B69294C785700CB6E2F /* Models */,
-				758B561128E62CB4003A735E /* Grid.swift */,
-				758B561728E62D23003A735E /* CardBehavior.swift */,
 				759D71A6294CDB9C003324B4 /* Utils */,
+				759D71B4294F83BD003324B4 /* Helpers */,
 			);
 			path = Set;
 			sourceTree = "<group>";
@@ -331,7 +371,7 @@
 				759D71A9294CE271003324B4 /* SetAppGraphicColor.swift in Sources */,
 				758B561B28E62D23003A735E /* Shape.swift in Sources */,
 				758B561328E62CB4003A735E /* CardsBoardView.swift in Sources */,
-				758EF12D27A8145E009EEF98 /* CardSet.swift in Sources */,
+				758EF12D27A8145E009EEF98 /* SetCard.swift in Sources */,
 				758B561C28E62D23003A735E /* SetGame.swift in Sources */,
 				758B562228E62F42003A735E /* CardConcentration.swift in Sources */,
 				75145D5A27BC4FAA00157FB1 /* ScoreTimerConcentration.swift in Sources */,

@@ -2,7 +2,7 @@
 //  CardBehavior.swift
 //  Set_Game
 //
-//  Created by Andrei Pripa on 11/4/22.
+//  Created by Andrei Pripa on 11/13/22.
 //
 
 import UIKit

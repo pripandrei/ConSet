@@ -4,8 +4,10 @@ import UIKit
 class SetViewController: UIViewController {
     
     @IBOutlet weak var dealThreeMoreCardButton: UIButton!
-    @IBOutlet weak var setTextTitleOnDiscardPile: UITextField!
     @IBOutlet weak var discardPileUIImageView: UIImageView!
+    
+    lazy var animator = UIDynamicAnimator(referenceView: view)
+    lazy var cardBehavior = CardBehavior(animator)
     
     private(set) var setIsPresentInChoosenCards = false
     private var setCards = [CardSet]()
@@ -16,8 +18,15 @@ class SetViewController: UIViewController {
     private var firstTimeLayoutSubviews = true
     private var gameStart = true
     
-    lazy var animator = UIDynamicAnimator(referenceView: view)
-    lazy var cardBehavior = CardBehavior(animator)
+    private let attributedTextForScoreLabel: [NSAttributedString.Key:Any] = [
+        .foregroundColor : SetGraphicColor.scoreCountColor,
+        .strokeWidth: -3
+    ]
+    
+    private let attributedTextForSetCount: [NSAttributedString.Key:Any] = [
+        .foregroundColor : SetGraphicColor.setCountColor,
+        .strokeWidth: -7
+    ]
     
     var cardsViews = [CardsView]()
     {
@@ -38,7 +47,7 @@ class SetViewController: UIViewController {
         {
             if let setTextTitleOnDiscardPile = setTextTitleOnDiscardPile
             {
-                setTextTitleOnDiscardPile.attributedText = setCount <= 1 ? NSAttributedString(string: "\(setCount)", attributes: attributedTextForSetCount) : NSAttributedString(string: "\(setCount)", attributes: attributedTextForSetCount)
+                setTextTitleOnDiscardPile.attributedText = NSAttributedString(string: "\(setCount)", attributes: attributedTextForSetCount)
             }
         }
     }
@@ -58,16 +67,38 @@ class SetViewController: UIViewController {
         }
     }
     
-    private let attributedTextForScoreLabel: [NSAttributedString.Key:Any] = [
-        .foregroundColor : SetGraphicColor.scoreCountColor,
-        .strokeWidth: -3
-    ]
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        createCardViews()
+        gameStart = false
+    }
     
-    private let attributedTextForSetCount: [NSAttributedString.Key:Any] = [
-        .foregroundColor : SetGraphicColor.setCountColor,
-        .strokeWidth: -7
-    ]
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        firstTimeLayoutSubviews = true
+    }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if firstTimeLayoutSubviews {
+            updateView()
+            firstTimeLayoutSubviews = false
+        }
+    }
+    
+    @IBOutlet weak var setTextTitleOnDiscardPile: UITextField! {
+        didSet {
+            if let setTextTitle = setTextTitleOnDiscardPile {
+                setTextTitle.attributedText = NSAttributedString(string: "\(scoreCount)", attributes: attributedTextForSetCount)
+            }
+        }
+    }
     
     @IBOutlet weak var cardsBoardView: CardsBoardView! {
         didSet {
@@ -203,7 +234,7 @@ class SetViewController: UIViewController {
         }
     }
     
-    func showSet() {
+    private func showSet() {
         
         let setOnTable = game.findSetInCardsOnTable()
         
@@ -221,7 +252,7 @@ class SetViewController: UIViewController {
         }
     }
     
-    func createCardViews()
+    private func createCardViews()
     {
         let upperRange = gameStart ? game.cardsOnTable : 3
         var viewVish = [CardsView]()
@@ -240,7 +271,7 @@ class SetViewController: UIViewController {
         cardsViews += viewVish
     }
     
-    func removeViewsFromSuperView()
+    private func removeViewsFromSuperView()
     {
         for cardView in cardsViews {
             cardView.removeFromSuperview()
@@ -258,7 +289,7 @@ class SetViewController: UIViewController {
         }
     }
     
-    func toggleDealMoreCardsButton() -> Bool {
+    private func toggleDealMoreCardsButton() -> Bool {
         
         let firstCardThatIsSet = game.playingCards.first { $0.cardIsSet == true }
         
@@ -289,33 +320,12 @@ class SetViewController: UIViewController {
         updateView()
     }
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        createCardViews()
-        gameStart = false
-    }
-    
-    func removeFromSuperViewIfSet() {
+    private func removeFromSuperViewIfSet() {
         cardsViews = cardsViews.filter {
             if let isset = $0.isSet, isset {
                 $0.removeFromSuperview()
             }
             return $0.isSet != true
-        }
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        firstTimeLayoutSubviews = true
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        if firstTimeLayoutSubviews {
-            updateView()
-            firstTimeLayoutSubviews = false
         }
     }
     
@@ -328,7 +338,7 @@ class SetViewController: UIViewController {
         view.isSelected = card.isSelected
     }
 
-    func createBackCardImage() -> UIImageView {
+    private func createBackCardImage() -> UIImageView {
         let image = UIImage(named: "playCard5")
         let imageView = UIImageView(image:  image!)
         imageView.contentMode = UIView.ContentMode.scaleAspectFit
@@ -338,7 +348,7 @@ class SetViewController: UIViewController {
         return imageView
     }
     
-    func updateView() {
+    private func updateView() {
         if let _ = dealThreeMoreCardButton, let _ = cardsBoardView {
             
             checkIfDealMoreCardsNeedsToBeDisabled()
@@ -606,8 +616,9 @@ class SetViewController: UIViewController {
     }
 }
 
-extension Array {
-    func indexExists(_ index: Int) -> Bool {
-        return self.indices.contains(index)
-    }
-}
+//Currently not in use
+//extension Array {
+//    func indexExists(_ index: Int) -> Bool {
+//        return self.indices.contains(index)
+//    }
+//}

@@ -20,7 +20,7 @@ class CardsBoardView: UIView {
         grid.frame = bounds
         grid.cellCount = numberOfCardsToBeDisplayed
     }
-    
+
     override func layoutSubviews()
     {
         super.layoutSubviews()

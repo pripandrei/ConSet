@@ -38,7 +38,7 @@ class StartSetGameViewController: UIViewController {
             tabBarController.blockRotation = true
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "New Game", let _ = segue.destination as? SetViewController {
             hidesBottomBarWhenPushed = true

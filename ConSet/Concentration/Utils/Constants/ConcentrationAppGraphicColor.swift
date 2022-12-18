@@ -2,7 +2,7 @@
 //  ConcentrationAppGraphicColor.swift
 //  ConSet
 //
-//  Created by Andrei Pripa on 12/17/22.
+//  Created by Andrei Pripa on 12/15/22.
 //
 
 import UIKit

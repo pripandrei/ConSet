@@ -3,35 +3,12 @@ import UIKit
 
 class ConcentrationViewController: UIViewController {
     
-    override func viewDidLoad() {
-        setTheme()
-        updateViewFromModel()
-    }
-    
     private lazy var game = Concentration(numberOfPairsOfCards: (buttonsFromFrontLayer.count + 1) / 2)
     private var emoji = [CardConcentration:String]()
     private var cardBackColor: UIColor?
     private var indexOfTouchedCard = 0
     private var indexOfCardsToBeCurlDown = [Int]()
     private var emojisOfCurrentTheme = String()
-    
-    var defaultTheme: [String : Any]? = [
-            "icons": "🎹🎼🎧🎸🪘🎻🪗🎺🎷",
-            "backgroundColor" : ConcentrationGraphicColor.ThemeColor.musicBackgroundColor,
-            "cardColor": ConcentrationGraphicColor.ThemeColor.musicCardColor
-    ]
-    
-    var numberOfPairsOfCards: Int {
-        return (buttonsFromFrontLayer.count + 1) / 2
-    }
-    
-     lazy var theme = defaultTheme {
-        didSet {
-            emoji = [:]
-            setTheme()
-            updateViewFromModel()
-        }
-    }
     
     private(set) var flipCount = 0
     {
@@ -41,6 +18,29 @@ class ConcentrationViewController: UIViewController {
         }
     }
     
+    private var attributesForScoreAndCountLables: [NSAttributedString.Key:Any] = [
+        .foregroundColor: ConcentrationGraphicColor.scoreAndCoundLablesColor,
+        .strokeWidth: -4,
+    ]
+    
+    var defaultTheme: [String : Any]? = [
+            "icons": "🎹🎼🎧🎸🪘🎻🪗🎺🎷",
+            "backgroundColor" : ConcentrationGraphicColor.ThemeColor.musicBackgroundColor,
+            "cardColor": ConcentrationGraphicColor.ThemeColor.musicCardColor
+    ]
+    
+    lazy var theme = defaultTheme {
+        didSet {
+            emoji = [:]
+            setTheme()
+            updateViewFromModel()
+        }
+    }
+    
+    var numberOfPairsOfCards: Int {
+        return (buttonsFromFrontLayer.count + 1) / 2
+    }
+
     var scoreCount = 0
     {
         didSet {
@@ -69,11 +69,6 @@ class ConcentrationViewController: UIViewController {
         }
     }
     
-    var attributesForScoreAndCountLables: [NSAttributedString.Key:Any] = [
-        .foregroundColor: ConcentrationGraphicColor.scoreAndCoundLablesColor,
-        .strokeWidth: -4,
-    ]
-    
     @IBOutlet var buttonsFromFrontLayer: [UIButton]!
     {
         didSet {
@@ -81,6 +76,31 @@ class ConcentrationViewController: UIViewController {
                 button.layer.cornerRadius = 5
 //                button.backgroundColor = #colorLiteral(red: 0.664758265, green: 0.2567061186, blue: 0.635348022, alpha: 1)
             }
+        }
+    }
+    
+    @IBAction private func touchCard(_ sender: UIButton) {
+        if let cardNumber = buttonsFromFrontLayer.firstIndex(of: sender) {
+            indexOfTouchedCard = cardNumber
+            indexOfCardsToBeCurlDown.append(cardNumber)
+            game.chooseCard(at: cardNumber)
+            flipCount = game.flipCount
+            scoreCount = game.scoreCount
+            updateViewFromModel()
+        }
+    }
+    
+    @IBAction private func newGameButtonTouched(_ sender: UIButton) {
+        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        emoji = [:]
+        flipCount = 0
+        setTheme()
+        scoreCount = game.scoreCount
+        resetView()
+        updateViewFromModel()
+        switch sender.state {
+        case .focused: startNewGame.bounds = startNewGame.bounds.insetBy(dx: 30, dy: 30)
+        default: break
         }
     }
     
@@ -95,6 +115,11 @@ class ConcentrationViewController: UIViewController {
 //                button.backgroundColor = #colorLiteral(red: 0.664758265, green: 0.2567061186, blue: 0.635348022, alpha: 1)
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        setTheme()
+        updateViewFromModel()
     }
     
     private func adjustShadow(for viewType: UIView) {
@@ -123,34 +148,9 @@ class ConcentrationViewController: UIViewController {
         }
     }
     
-    @IBAction private func touchCard(_ sender: UIButton) {
-        if let cardNumber = buttonsFromFrontLayer.firstIndex(of: sender) {
-            indexOfTouchedCard = cardNumber
-            indexOfCardsToBeCurlDown.append(cardNumber)
-            game.chooseCard(at: cardNumber)
-            flipCount = game.flipCount
-            scoreCount = game.scoreCount
-            updateViewFromModel()
-        }
-    }
-    
     func resetView() {
         buttonsFromFrontLayer.forEach { $0.isHidden = true; $0.isHidden = false }
         buttonsFromBehindLayer.forEach { $0.isHidden = true; $0.isHidden = false }
-    }
-    
-    @IBAction private func newGameButtonTouched(_ sender: UIButton) {
-        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-        emoji = [:]
-        flipCount = 0
-        setTheme()
-        scoreCount = game.scoreCount
-        resetView()
-        updateViewFromModel()
-        switch sender.state {
-        case .focused: startNewGame.bounds = startNewGame.bounds.insetBy(dx: 30, dy: 30)
-        default: break
-        }
     }
     
     private func updateViewFromModel() {
