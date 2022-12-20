@@ -79,20 +79,6 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
         splitViewController?.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let customTabBarController = customTabBarController {
-            customTabBarController.blockRotation = true
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let customTabBarController = customTabBarController {
-            customTabBarController.blockRotation = false
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "Choose Theme"

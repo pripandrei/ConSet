@@ -18,6 +18,12 @@ class ConcentrationViewController: UIViewController {
         }
     }
     
+    private var customTabBarController: CustomTabBarController? {
+        return tabBarController as? CustomTabBarController
+    }
+    
+    
+    
     private var attributesForScoreAndCountLables: [NSAttributedString.Key:Any] = [
         .foregroundColor: ConcentrationGraphicColor.scoreAndCoundLablesColor,
         .strokeWidth: -4,
@@ -120,6 +126,18 @@ class ConcentrationViewController: UIViewController {
     override func viewDidLoad() {
         setTheme()
         updateViewFromModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let customTabBarController = customTabBarController {
+            customTabBarController.blockRotation = false
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if let customTabBarController = customTabBarController {
+            customTabBarController.blockRotation = true
+        }
     }
     
     private func adjustShadow(for viewType: UIView) {

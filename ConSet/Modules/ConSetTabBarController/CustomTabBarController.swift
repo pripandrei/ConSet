@@ -9,7 +9,7 @@ import UIKit
 
 class CustomTabBarController: UITabBarController {
 
-    var blockRotation = false
+    var blockRotation = true
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -21,22 +21,18 @@ class StartSetGameViewController: UIViewController {
         return tabBarController as? CustomTabBarController
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        if let tabBarController = customTabBarController {
+//            tabBarController.blockRotation = true
+//        }
+    }
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         hidesBottomBarWhenPushed = false
-        
-        if let tabBarController = customTabBarController {
-            tabBarController.blockRotation = false
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if let tabBarController = customTabBarController {
-            tabBarController.blockRotation = true
-        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,5 +40,4 @@ class StartSetGameViewController: UIViewController {
             hidesBottomBarWhenPushed = true
         }
     }
-    
 }

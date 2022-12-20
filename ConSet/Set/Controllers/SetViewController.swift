@@ -18,6 +18,11 @@ class SetViewController: UIViewController {
     private var firstTimeLayoutSubviews = true
     private var gameStart = true
     
+    
+    private var customTabBarController: CustomTabBarController? {
+        return tabBarController as? CustomTabBarController
+    }
+    
     private let attributedTextForScoreLabel: [NSAttributedString.Key:Any] = [
         .foregroundColor : SetGraphicColor.scoreCountColor,
         .strokeWidth: -3
@@ -77,6 +82,21 @@ class SetViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         firstTimeLayoutSubviews = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let customTabBarController = customTabBarController {
+                    customTabBarController.blockRotation = false
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let customTabBarController = customTabBarController {
+                    customTabBarController.blockRotation = true
+        }
     }
     
     override func viewWillLayoutSubviews() {
