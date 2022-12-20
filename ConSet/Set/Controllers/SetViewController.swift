@@ -103,8 +103,9 @@ class SetViewController: UIViewController {
     @IBOutlet weak var cardsBoardView: CardsBoardView! {
         didSet {
             let swipe = UISwipeGestureRecognizer(target: self, action: #selector(dealThreCardsWithSwipe))
-            swipe.direction = .down
+            swipe.direction = .up
             cardsBoardView.addGestureRecognizer(swipe)
+            
             let rotate = UIRotationGestureRecognizer(target: self, action: #selector(shuffleCardsWithRotation))
             cardsBoardView.addGestureRecognizer(rotate)
         }
@@ -125,21 +126,6 @@ class SetViewController: UIViewController {
             restartImageView.addGestureRecognizer(tap)
             restartImageView.isUserInteractionEnabled = true
         }
-    }
-    
-    @IBAction func newGameButton(_ sender: UIButton)
-    {
-        game = SetGame()
-        gameStart = true
-        firstTimeDeal = true
-        pushCardsOnRestart()
-        _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false, block: { _ in
-            self.removeViewsFromSuperView()
-            self.createCardViews()
-            self.updateView()
-            self.cardsBoardView.setNeedsDisplay()
-            self.setCount = 0
-        })
     }
     
     @IBAction func dealThreeMoreCards(_ sender: UIButton)
@@ -172,14 +158,6 @@ class SetViewController: UIViewController {
         }
     }
     
-    
-    @objc func showSetByPressingScore(_ recognizer: UITapGestureRecognizer) {
-        switch recognizer.state {
-        case .ended: showSet()
-        default: break
-        }
-    }
-    
     @objc func shuffleCardsWithRotation(_ gesture: UIRotationGestureRecognizer) {
         switch gesture.state {
         case .ended:
@@ -188,14 +166,14 @@ class SetViewController: UIViewController {
         default: break
         }
     }
-
-    @objc private func dealThreeCardsWhenSetLableIsTaped(_ gesture: UITapGestureRecognizer) {
-        switch gesture.state {
-        case .ended: addThreeMoreCards()
-            dealThreeCards()
+    
+    @objc func showSetByPressingScore(_ recognizer: UITapGestureRecognizer) {
+        switch recognizer.state {
+        case .ended: showSet()
         default: break
         }
     }
+
     
     @objc func dealThreCardsWithSwipe(_ gesture: UISwipeGestureRecognizer)
     {
@@ -210,7 +188,9 @@ class SetViewController: UIViewController {
         
         switch gesture.state
         {
-        case .ended: addThreeMoreCards()
+        case .ended:
+            addThreeMoreCards()
+            dealThreeCards()
         default: break
         }
     }

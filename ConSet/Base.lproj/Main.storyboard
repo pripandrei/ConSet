@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -136,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqm-Qf-aDT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="388"/>
+            <point key="canvasLocation" x="-3620" y="878"/>
         </scene>
         <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -496,14 +495,20 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DUK-r7-ic9" secondAttribute="bottom" constant="60" id="N4V-Oa-rfh">
                                 <variation key="heightClass=regular-widthClass=compact" constant="190"/>
                             </constraint>
-                            <constraint firstItem="DUK-r7-ic9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Vc0-Ii-h0x"/>
+                            <constraint firstItem="DUK-r7-ic9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Vc0-Ii-h0x">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
                             <constraint firstItem="gFj-y9-Wuh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="500" id="Zuz-Wx-4Md">
                                 <variation key="heightClass=regular-widthClass=compact" constant="200"/>
                             </constraint>
-                            <constraint firstItem="YFL-Ac-Arm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="bpx-jB-owD"/>
+                            <constraint firstItem="YFL-Ac-Arm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="bpx-jB-owD">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
                             <constraint firstItem="UQC-fg-t4K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cNm-Bp-TaS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gFj-y9-Wuh" secondAttribute="trailing" priority="750" constant="16" id="hu6-gd-2Vy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DUK-r7-ic9" secondAttribute="trailing" constant="30" id="jLp-Wh-1tZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DUK-r7-ic9" secondAttribute="trailing" constant="100" id="jLp-Wh-1tZ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
                             <constraint firstItem="gFj-y9-Wuh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-10" id="knv-KI-zmj">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
@@ -513,7 +518,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UQC-fg-t4K" secondAttribute="bottom" priority="750" constant="5" id="u1U-0W-YeA">
                                 <variation key="heightClass=regular-widthClass=compact" constant="80"/>
                             </constraint>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YFL-Ac-Arm" secondAttribute="trailing" constant="30" id="uFN-Rk-U02"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YFL-Ac-Arm" secondAttribute="trailing" constant="100" id="uFN-Rk-U02">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SKB-y0-sDQ"/>
@@ -557,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-930" y="1057"/>
+            <point key="canvasLocation" x="-2719" y="878"/>
         </scene>
         <!--Start Set Game View Controller-->
         <scene sceneID="sbY-Uf-TYg">
@@ -601,7 +608,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0n-Ab-M4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5182" y="388"/>
+            <point key="canvasLocation" x="-3620" y="-143"/>
         </scene>
         <!--Set-->
         <scene sceneID="WUg-6I-LcG">
@@ -618,7 +625,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyA-vp-THQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3810" y="-240"/>
+            <point key="canvasLocation" x="-4535" y="-143"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="pcT-zC-5wI">
@@ -647,7 +654,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3v8-Ts-ce8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2372" y="-1074"/>
+            <point key="canvasLocation" x="-5617" y="324"/>
         </scene>
         <!--Concentration-->
         <scene sceneID="GGM-gO-Jdq">
@@ -666,7 +673,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IEC-w7-ZBI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-929" y="-240"/>
+            <point key="canvasLocation" x="-4535" y="878"/>
         </scene>
         <!--Set View Controller-->
         <scene sceneID="9eR-Fy-t3h">
@@ -694,264 +701,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Score:0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-RX-azq">
-                                <rect key="frame" x="240" y="93" width="63" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.32167422130000001" green="0.32791074520000002" blue="0.74825266219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hlk-vb-5ob" userLabel="Stack View(Deactivated)">
-                                <rect key="frame" x="20" y="54" width="374" height="638"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Vb-Yx-r3p">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="99.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4ON-z4-lFq">
-                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qI0-bp-LY5">
-                                                <rect key="frame" x="95.5" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="mnc-pk-zsl">
-                                                <rect key="frame" x="191" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sju-za-wan">
-                                                <rect key="frame" x="286.5" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7VL-RN-yAm">
-                                        <rect key="frame" x="0.0" y="107.5" width="374" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="84M-hZ-Dv6">
-                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="100"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9Sv-50-uWf">
-                                                <rect key="frame" x="95.5" y="0.0" width="87.5" height="100"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ef8-TX-wzG">
-                                                <rect key="frame" x="191" y="0.0" width="87.5" height="100"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="z6K-HF-5mX">
-                                                <rect key="frame" x="286.5" y="0.0" width="87.5" height="100"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LIm-eA-5IB">
-                                        <rect key="frame" x="0.0" y="215.5" width="374" height="99.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2IK-YM-Ej0">
-                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ni5-iu-2BU">
-                                                <rect key="frame" x="95.5" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="x4X-c0-jo8">
-                                                <rect key="frame" x="191" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="18M-hY-9p0">
-                                                <rect key="frame" x="286.5" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="1" green="0.37832380640000002" blue="0.023286032200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="veg-xF-Esi">
-                                        <rect key="frame" x="0.0" y="323" width="374" height="99.5"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hMM-cT-fvo">
-                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="omu-ZD-01H">
-                                                <rect key="frame" x="95.5" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SN9-80-XUm">
-                                                <rect key="frame" x="191" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qTi-9Y-0Rr">
-                                                <rect key="frame" x="286.5" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-pk-R3g">
-                                        <rect key="frame" x="0.0" y="430.5" width="374" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vQ4-gn-aT2">
-                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="100"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-8E-M9s">
-                                                <rect key="frame" x="95.5" y="0.0" width="87.5" height="100"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xZX-9U-raU">
-                                                <rect key="frame" x="191" y="0.0" width="87.5" height="100"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zQW-kF-seb">
-                                                <rect key="frame" x="286.5" y="0.0" width="87.5" height="100"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iLO-Mk-ymb">
-                                        <rect key="frame" x="0.0" y="538.5" width="374" height="99.5"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Yda-4M-Vdi">
-                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XhX-yh-ydg">
-                                                <rect key="frame" x="95.5" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fcs-p1-cjV">
-                                                <rect key="frame" x="191" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bq4-he-9ua">
-                                                <rect key="frame" x="286.5" y="0.0" width="87.5" height="99.5"/>
-                                                <color key="backgroundColor" red="0.87058818339999999" green="0.38823530080000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="systemBrownColor"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playCard5" translatesAutoresizingMaskIntoConstraints="NO" id="SJr-H4-K48">
                                 <rect key="frame" x="229" y="564" width="94" height="136"/>
                                 <constraints>
@@ -963,17 +712,6 @@
                                     </constraint>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxT-AD-6fJ">
-                                <rect key="frame" x="70" y="99" width="40" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="restart-2"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="newGameButton:" destination="vfX-pj-wsY" eventType="touchUpInside" id="W7L-GU-bkT"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dtW-HV-mgm">
                                 <rect key="frame" x="249.66666666666663" y="612" width="53" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -985,16 +723,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFB-7z-v0O" userLabel="Cheat(Deactivated)">
-                                <rect key="frame" x="276" y="653" width="77" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Cheat">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                    <color key="baseForegroundColor" systemColor="systemCyanColor"/>
-                                </buttonConfiguration>
-                            </button>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tlL-kt-m1A" customClass="CardsBoardView" customModule="ConSet" customModuleProvider="target">
                                 <rect key="frame" x="16" y="143" width="343" height="406"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1029,8 +757,6 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="60"/>
                             </constraint>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="firstBaseline" secondItem="Scy-nu-OsC" secondAttribute="baseline" constant="23.333333333333332" symbolType="layoutAnchor" id="JQB-3u-Q5h"/>
-                            <constraint firstItem="hlk-vb-5ob" firstAttribute="top" secondItem="ZfP-9D-qQf" secondAttribute="top" constant="10" id="Jbc-R6-ejJ"/>
-                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="hlk-vb-5ob" secondAttribute="trailing" constant="20" id="P4v-cf-M2Z"/>
                             <constraint firstItem="Tt6-vv-ZPF" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="110" id="TlW-la-5iv">
                                 <variation key="heightClass=regular-widthClass=compact" constant="60"/>
                             </constraint>
@@ -1039,8 +765,6 @@
                             </constraint>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="trailing" secondItem="tlL-kt-m1A" secondAttribute="trailing" constant="16" id="XwH-DD-Kdf"/>
                             <constraint firstItem="dtW-HV-mgm" firstAttribute="centerX" secondItem="SJr-H4-K48" secondAttribute="centerX" id="Z4I-Ld-2PY"/>
-                            <constraint firstItem="ZfP-9D-qQf" firstAttribute="bottom" secondItem="hlk-vb-5ob" secondAttribute="bottom" constant="170" id="ZUL-pI-23a"/>
-                            <constraint firstItem="hlk-vb-5ob" firstAttribute="leading" secondItem="ZfP-9D-qQf" secondAttribute="leading" constant="20" id="d63-T4-Zye"/>
                             <constraint firstItem="ZfP-9D-qQf" firstAttribute="bottom" secondItem="tlL-kt-m1A" secondAttribute="bottom" constant="100" id="hvL-gr-kTD">
                                 <variation key="heightClass=regular-widthClass=compact" constant="180"/>
                             </constraint>
@@ -1050,14 +774,6 @@
                             </constraint>
                             <constraint firstItem="tlL-kt-m1A" firstAttribute="top" secondItem="ZfP-9D-qQf" secondAttribute="top" constant="52" id="vCd-5S-WJx"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Efl-RX-azq"/>
-                                <exclude reference="hlk-vb-5ob"/>
-                                <exclude reference="pxT-AD-6fJ"/>
-                                <exclude reference="kFB-7z-v0O"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="24x24 9" id="F94-mi-w9E">
                         <inset key="imageInsets" minX="0.0" minY="173" maxX="0.0" maxY="173"/>
@@ -1080,7 +796,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLF-CQ-zXh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3810" y="1057"/>
+            <point key="canvasLocation" x="-2719" y="-143"/>
         </scene>
     </scenes>
     <resources>
@@ -1092,12 +808,6 @@
         <image name="restart-2" width="512" height="512"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
