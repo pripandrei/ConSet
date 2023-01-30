@@ -23,7 +23,6 @@ class ConcentrationViewController: UIViewController {
     }
     
     
-    
     private var attributesForScoreAndCountLables: [NSAttributedString.Key:Any] = [
         .foregroundColor: ConcentrationGraphicColor.scoreAndCoundLablesColor,
         .strokeWidth: -4,
@@ -156,6 +155,11 @@ class ConcentrationViewController: UIViewController {
         if let score = scoreLable {
             score.attributedText = NSAttributedString(string: "Score: \(scoreCount)", attributes: attributesForScoreAndCountLables)
             flipCountLable.sizeToFit()
+        }
+    }
+    @IBOutlet weak var asd: UINavigationItem! {
+        didSet {
+            
         }
     }
     

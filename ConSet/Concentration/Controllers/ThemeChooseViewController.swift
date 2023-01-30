@@ -129,7 +129,7 @@ class ThemeChooseViewController: UIViewController, UISplitViewControllerDelegate
         }
     }
     
-    /// splitViewController was removed
+    /// splitsplitViewController was removed
     ///
 //    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
 //        return true

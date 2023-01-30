@@ -21,14 +21,6 @@ class StartSetGameViewController: UIViewController {
         return tabBarController as? CustomTabBarController
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        if let tabBarController = customTabBarController {
-//            tabBarController.blockRotation = true
-//        }
-    }
-    
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         

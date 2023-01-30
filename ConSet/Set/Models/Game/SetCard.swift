@@ -10,7 +10,7 @@ import Foundation
 struct CardSet: CustomStringConvertible, Equatable {
     
     static func == (lhs: CardSet, rhs: CardSet) -> Bool {
-        return lhs.shapeStyle == rhs.shapeStyle && lhs.number == rhs.number && lhs.shadingStyle == rhs.shadingStyle && lhs.colorStyle == rhs.colorStyle
+        return lhs.shapeStyle == rhs.shapeStyle && lhs.number == rhs.number && lhs.shadingStyle == rhs.shadingStyle && lhs.colorStyle == rhs.colorStyle 
     }
     
     private(set) var shapeStyle: Int

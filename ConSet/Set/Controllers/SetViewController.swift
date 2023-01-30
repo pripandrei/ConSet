@@ -18,7 +18,6 @@ class SetViewController: UIViewController {
     private var firstTimeLayoutSubviews = true
     private var gameStart = true
     
-    
     private var customTabBarController: CustomTabBarController? {
         return tabBarController as? CustomTabBarController
     }

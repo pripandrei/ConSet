@@ -12,7 +12,7 @@ struct Shape {
     
     var shapeStyle: ShapeStyle
 
-    var ViewCardBounds = CGRect()
+    var ViewCardBounds: CGRect
     
     var cardShape: UIBezierPath {
         switch shapeStyle {
@@ -39,7 +39,6 @@ struct Shape {
     private func drawOval(_ rect: CGRect) -> UIBezierPath {
 
         let path = UIBezierPath(roundedRect: rect.insetBy(dx: rect.width / 5, dy: rect.height / 2.5) , cornerRadius: 15.0)
-
         path.lineWidth = 1.0
         
         return path
